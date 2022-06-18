@@ -31,15 +31,15 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 - Create Maven project
   
-- Create *Employee* class under *com.hr.personnel* package with the following fields
+- Create *com.hr.personnel.Employee* class under *com.hr.personnel* package with the following fields
   - *String name*
   - *LocatDate hireDate* 
 - Add the following methods
-  - *String getEmployeeInfo()* method which returns *"Employee: name=" + getName() + ", hireDate=" + getHireDate()"*
-  - *int getHoursWorked()* method that returns number of hours worked 
+  - *String getEmployeeInfo()* method which returns *"name=" + getName() + ", hireDate=" + getHireDate()"*
+  - *String work()* method that returns "<name> worked" message
 
-- Write *HTClient* class under *client" sub-package with creates multiple *Employee** objects and calls *getEmployeeInfo* methods of the objects
-- Write Unit testing code that verifies that *getEmployeeInfo* method works as expected
+- Write *HRClient* class under *client" sub-package with creates multiple *com.hr.personnel.Employee** objects and calls *getEmployeeInfo* methods of the objects
+- Write Unit testing code that verifies that *getEmployeeInfo* and *work* methods work as expected
 
 ## Lab Step 2 (Lab 8,2 of Java I)
 
@@ -50,14 +50,14 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 ### Concepts that will be covered
 
-- Create *SalariedEmployee* and *HourlyEmployee classes extending *Employee* class
+- Create *SalariedEmployee* and *HourlyEmployee classes extending *com.hr.personnel.Employee* class
 - Create *Department* class with the following fields:
   - String name*
   - String location
-  - Employee[] employees
+  - com.hr.personnel.Employee[] employees
   - int currentIndex
 - Add the following methods
-  - void addEmployee(Employee employee)
+  - void addEmployee(com.hr.personnel.Employee employee)
   - int computeTotalNumberOfHoursWorkedByDepartmentWorkers()
 
 - Refactor *HRClient* class to use *Department* class
@@ -72,7 +72,7 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 ### Concrete steps to take
 
-- Add *computeMonthlyCompensation()* to the *Employee* class
+- Add *computeMonthlyCompensation()* to the *com.hr.personnel.Employee* class
 
 - *SalaryedEmployee* class implements *computeMonthlyCompensation()* method using *monthlySalary* private field
 - *HourlyEmployee* class implements *computeMonthlyCompensation()* method using *hourlyRate* and *numberOfHoursWorkedPerMonth* fields
@@ -90,7 +90,7 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 ### Concreate steps
 
-- Convert *Employee* class as abstract class making *computeMonthlyCompensation()* as an abstract method
+- Convert *com.hr.personnel.Employee* class as abstract class making *computeMonthlyCompensation()* as an abstract method
 - Refactor other code
 
 ## Lab Step 5 (lab 9.1)
@@ -107,7 +107,7 @@ Each step will be captured as a "tag" so that students can see the progress of t
   - public static final double HOURLY_TAX_RATE = 0.25;
   - public static final double SALARIED_TAX_RATE = 0.30;
 
-- Make *Employee* abstract class to implement *TaxPayer* interface
+- Make *com.hr.personnel.Employee* abstract class to implement *TaxPayer* interface
 - Refactor *SalariedEmployee* and "HourlyEmployee* classes accordingly
 
 - Create *Corporation* class, which also implements *TaxPayer* interface
