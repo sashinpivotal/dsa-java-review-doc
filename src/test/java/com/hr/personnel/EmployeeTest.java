@@ -17,13 +17,13 @@ public class EmployeeTest {
     }
 
     @org.junit.Test
-    public void getEmployeeInfo() {
+    public void getEmployeeInfo_should_return_correct_value_given_a_valid_employee() {
         String employeeInfo = kane.getEmployeeInfo();
         assertEquals("name = kane, hireDate = 2005-02-03", employeeInfo);
     }
 
     @org.junit.Test
-    public void work() {
+    public void work_should_return_valid_String() {
         String work = kane.work();
         assertEquals("kane worked", work);
     }

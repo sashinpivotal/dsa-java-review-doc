@@ -31,7 +31,7 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 - Create Maven project
   
-- Create *com.hr.personnel.Employee* class under *com.hr.personnel* package with the following fields
+- Create *com.hr.personnel.Employee* class under *com.hr.personnel* package with the following fields and appropriate accessor methods
   - *String name*
   - *LocatDate hireDate* 
 - Add the following methods
@@ -51,17 +51,26 @@ Each step will be captured as a "tag" so that students can see the progress of t
 ### Concepts that will be covered
 
 - Create *SalariedEmployee* and *HourlyEmployee classes extending *com.hr.personnel.Employee* class
+- Add the following fields and appropriate accessor methods to the *SalariedEmployee* class
+  - double salary;
+- Add the following fields and appropriate accessor methods to the *HourlyEmployee* class
+  - int hoursWorked;
+  - double hourlyRate;
+  
 - Create *Department* class with the following fields:
-  - String name*
+  - String name
   - String location
-  - com.hr.personnel.Employee[] employees
+  - com.hr.personnel.Employee[] employees array with 100 
   - int currentIndex
-- Add the following methods
+- Add the following methods to the *Department* class
   - void addEmployee(com.hr.personnel.Employee employee)
-  - int computeTotalNumberOfHoursWorkedByDepartmentWorkers()
+  - int letEmployeesWorkAndReturnNumberOfEmployeesWhoWorked()
 
 - Refactor *HRClient* class to use *Department* class
 - Write unit test code for *Department* class
+
+- (Optional) add the following method to *Department* class
+  - void removeEmployee(String employeeName)
 
 ## Lab Step 3 (Lab 8.3 of Java 1)
 
