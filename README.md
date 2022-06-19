@@ -175,20 +175,25 @@ Each step will be captured as a "tag" so that students can see the progress of t
 - Throwing an exception
 
 ### Concreate steps
+  
+- Add the following to the *HourlyEmployee* class
+  -     public static final double FEDERAL_MINIMUM_HOURLY_WAGE = 7.0;
 
-- Throw *IllegalArgumentException* in the *HourlyEmployee* class
+- Refactor *setHourlyRate* method to throw *IllegalArgumentException* in the *HourlyEmployee* class when the *hourlyRate* is smaller than *FEDERAL_MINIMUM_WAGE*
 
 ```
-    public void setRate(double rate) {
-        if (rate < FEDERAL_MINIMUM_WAGE) {
-            throw new IllegalArgumentException("Illegal wage: " + rate + "." +
-                    " Federal minimum wage is " + FEDERAL_MINIMUM_WAGE + ".");
+    public void setHourlyRate(double hourlyRate) {
+        if (hourlyRate < FEDERAL_MINIMUM_HOURLY_WAGE) {
+            throw new IllegalArgumentException("Illegal wage: " + hourlyRate + "." +
+                    " Federal minimum wage is " + FEDERAL_MINIMUM_HOURLY_WAGE + ".");
         }
         else {
-            this.rate = rate;
+            this.hourlyRate = hourlyRate;
         }
     }
 ```
+
+- Refactor *HourlyEmployeeTest* test accordingly
 
 ## Lab Step 8 (lab 10.2)
 

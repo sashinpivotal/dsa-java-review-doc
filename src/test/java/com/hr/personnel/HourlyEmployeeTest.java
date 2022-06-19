@@ -50,4 +50,11 @@ public class HourlyEmployeeTest {
         double monthlyTaxToPay = mary.computeMonthlyTaxToPay();
         assertEquals(0.0, monthlyTaxToPay, 0.01);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void setHourlyRate_should_throw_IllegalArgumentException_when_hourly_rate_is_set_below_federal_minimum_wage() {
+        Employee mary = new HourlyEmployee("mary",
+                LocalDate.of(2010, 2, 3),
+                10, 5.0);
+    }
 }
