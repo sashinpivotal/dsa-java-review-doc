@@ -230,6 +230,7 @@ Each step will be captured as a "tag" so that students can see the progress of t
 ### Concrete steps
 
 - Refactor *IRS* class as a singleton class
+- Refactor *IRSTest" accordingly
 
 ## Lab Step 11
 

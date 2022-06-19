@@ -4,9 +4,11 @@ import com.hr.corp.Corporation;
 import com.hr.personnel.HourlyEmployee;
 import com.hr.personnel.SalariedEmployee;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -17,6 +19,7 @@ public class IRSTest {
     @Before
     public void setUp() throws Exception {
         irs = new IRS();
+
         Corporation yourCompany = new Corporation("yourCompany", 200000.0);
         irs.register(yourCompany);
         SalariedEmployee jon = new SalariedEmployee("jon",

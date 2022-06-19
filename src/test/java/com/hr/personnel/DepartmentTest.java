@@ -24,8 +24,7 @@ public class DepartmentTest {
 
     @Test
     public void addEmployee_should_add_an_employee_correctly() {
-        int currentIndex = department.getCurrentIndex();
-        assertEquals(2, currentIndex);
+        assertEquals(2, department.getEmployees().size());
     }
 
     @Test
