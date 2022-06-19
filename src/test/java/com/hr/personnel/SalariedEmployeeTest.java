@@ -28,7 +28,16 @@ public class SalariedEmployeeTest {
     @Test
     public void computeMonthlyTaxToPay_should_compute_monthly_tax_correctly() {
         double monthlyTaxToPay = mary.computeMonthlyTaxToPay();
-        assertEquals(600.0, monthlyTaxToPay, 0.01);
+        assertEquals(400.0, monthlyTaxToPay, 0.01);
+    }
+
+    @Test
+    public void computeMonthlyTaxToPay_should_return_0_when_monthly_compensation_is_less_than_standard_deduction() {
+        Employee mary = new SalariedEmployee("mary",
+                LocalDate.of(2010, 2, 3),
+                200.0);
+        double monthlyTaxToPay = mary.computeMonthlyTaxToPay();
+        assertEquals(0.0, monthlyTaxToPay, 0.01);
     }
 
 }

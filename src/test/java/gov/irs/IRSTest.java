@@ -3,13 +3,12 @@ package gov.irs;
 import com.hr.corp.Corporation;
 import com.hr.personnel.HourlyEmployee;
 import com.hr.personnel.SalariedEmployee;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalDate;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class IRSTest {
 
@@ -33,6 +32,16 @@ public class IRSTest {
     @Test
     public void computeTotalMonthlyTaxToCollect_computes_correctly_given_both_employees_and_corp() {
         double totalMonthlyTaxToCollect = irs.computeTotalMonthlyTaxToCollect();
-        Assert.assertEquals(26300.0, totalMonthlyTaxToCollect, 0.01);
+        assertEquals(25850.0, totalMonthlyTaxToCollect, 0.01);
+    }
+
+    @Test
+    public void computeTotalMonthlyTaxToCollect_computes_correctly_given_employee_who_makes_less_than_standard_deduction() {
+        SalariedEmployee simon = new SalariedEmployee("simon",
+                LocalDate.of(2020, 3, 4),
+                100.0);
+        irs.register(simon);
+        double totalMonthlyTaxToCollect = irs.computeTotalMonthlyTaxToCollect();
+        assertEquals(25850.0, totalMonthlyTaxToCollect, 0.01);
     }
 }

@@ -5,12 +5,16 @@ The goal of this 1-day lab is to review basic yet essential Java features for DS
 ## Essential topics to be covered
 
 - Java classes and Java objects
-- Inheritance vs Composition
+- Encapsulation
+- Inheritance
 - Polymorphism
-- Java abstraction classes and Java interfaces
-- Enum
+- Java abstraction class
+- Java interfaces
 - Collection classes
-- Unit Testing and Integration Testing
+- Unit Testing
+- Singleton
+
+## Advanced topics
 
 - Generics
 - TDD practices
@@ -145,19 +149,24 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 ### Concepts that will be exercised
 
-- Default method in the interface
+- Default method in an Java interface
 
 ### Concreate steps
 
 - Add the following method to the *TaxPayer* interface
 
 ```
-    public static final double DEFAULT_STANDARD_DEDUCTION = 7500.0;
+    public static final double DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION = 250.0;
 
-    default public double getStandardDeduction() {
-        return DEFAULT_STANDARD_DEDUCTION;
+    default public double getStandardEmployeeMonthlyDeduction() {
+        return DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION;
     }
 ```
+
+- Refactor *computeMonthlyTaxToPay* methods of *HourlyEmployee* and *SalariedEmployee* classes accordingly
+  -When the monthly compensation is less than or equal to the DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION, *computeMonthlyTaxToPay* should return 0
+- Refactor *HourlyEmployeeTest* and *SalariedEmployeeTest* accordingly
+- Refactor *IRSTest*
 
 ## Lab Step 7 (lab 10.1)
 

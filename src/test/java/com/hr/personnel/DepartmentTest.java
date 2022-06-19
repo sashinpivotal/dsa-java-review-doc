@@ -1,12 +1,11 @@
 package com.hr.personnel;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalDate;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class DepartmentTest {
 
@@ -26,18 +25,18 @@ public class DepartmentTest {
     @Test
     public void addEmployee_should_add_an_employee_correctly() {
         int currentIndex = department.getCurrentIndex();
-        Assert.assertEquals(2, currentIndex);
+        assertEquals(2, currentIndex);
     }
 
     @Test
     public void letEmployeesWorkAndReturnNumberOfEmployeesWhoWorked_should_return_correct_number() {
         int numberOfEmployeesWhoWorked = department.letEmployeesWorkAndReturnNumberOfEmployeesWhoWorked();
-        Assert.assertEquals(2, numberOfEmployeesWhoWorked);
+        assertEquals(2, numberOfEmployeesWhoWorked);
     }
 
     @Test
     public void computeDepartmentMonthlyTotalCompensation_should_return_correct_value() {
         double departmentMonthlyTotalCompensation = department.computeDepartmentMonthlyTotalCompensation();
-        Assert.assertEquals(5000.0, departmentMonthlyTotalCompensation, 0.01);
+        assertEquals(5000.0, departmentMonthlyTotalCompensation, 0.01);
     }
 }
