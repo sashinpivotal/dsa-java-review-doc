@@ -105,7 +105,7 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 ### Concreate steps
 
-- Convert *com.hr.personnel.Employee* class as abstract class making *computeMonthlyCompensation()* as an abstract method
+- Convert *.Employee* class as abstract class making *computeMonthlyCompensation()* as an abstract method
 - Refactor other code
 
 ## Lab Step 5 (lab 9.1)
@@ -116,7 +116,7 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 ### Concreate steps
 
-- Create *TaxPayer* interface with the following methods
+- Create *TaxPayer* interface under *gov.irs* package with the following methods
   - double computeTax();   /// returns amount of tax to pay
 - Add the following constants to the interface
   - public static final double HOURLY_TAX_RATE = 0.25;
@@ -127,7 +127,7 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 - Create *Corporation* class, which also implements *TaxPayer* interface
 
-- Create *IRS* class with the following methods
+- Create *IRS* class under *gov.irs* package with the following methods
   - double collectTaxes(); // collect Tax
 
 ## Lab Step 6 (lab 9.2)
