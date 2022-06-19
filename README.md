@@ -31,7 +31,7 @@ Each step will be captured as a "tag" so that students can see the progress of t
 - Writing Java class and creating an object
 - Unit testing
 
-### Concreate steps to take
+### Concrete steps to take
 
 - Create Maven project
   
@@ -179,7 +179,7 @@ Each step will be captured as a "tag" so that students can see the progress of t
 - Add the following to the *HourlyEmployee* class
   -     public static final double FEDERAL_MINIMUM_HOURLY_WAGE = 7.0;
 
-- Refactor *setHourlyRate* method to throw *IllegalArgumentException* in the *HourlyEmployee* class when the *hourlyRate* is smaller than *FEDERAL_MINIMUM_WAGE*
+- Refactor *setHourlyRate* method to throw *IllegalArgumentException* in the *HourlyEmployee* class when the *hourlyRate* is smaller than *FEDERAL_MINIMUM_HOURLY_WAGE*
 
 ```
     public void setHourlyRate(double hourlyRate) {
@@ -203,7 +203,9 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 ### Concreate steps
 
-- Use *IllegalWageException* class instead of *IllegalArgumentException*
+- Create and use *IllegalHourlyWageException* class instead of *IllegalArgumentException*
+
+- (Optional) If monthly salary for *SalariedEmployee* is set with more than 1 million dollars, throw "MorallyWrongWageException"
 
 ## Lab Setp 9 (Lab 11.1)
 
@@ -213,8 +215,11 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 ### Concrete steps
 
-- Refactor *Department* class to use *ArrayList* instead of an array
+- Refactor *Department* class to user proper collection object of *Employee* instead of an array based on the following requiements
+- Remove *currentIndex* field from the *Department* class
 - Refactor *IRS* class to use *ArrayList* instead of an array
+- Remove *currentIndex* field from the *IRS* class
+- Refactor any test code accordingly
 
 ## Lab Step 10
 

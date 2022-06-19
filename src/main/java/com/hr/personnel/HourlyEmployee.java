@@ -47,7 +47,7 @@ public class HourlyEmployee extends Employee {
 
     public void setHourlyRate(double hourlyRate) {
         if (hourlyRate < FEDERAL_MINIMUM_HOURLY_WAGE) {
-            throw new IllegalArgumentException("Illegal wage: " + hourlyRate + "." +
+            throw new IllegalHourlyWageException("Illegal wage: " + hourlyRate + "." +
                     " Federal minimum wage is " + FEDERAL_MINIMUM_HOURLY_WAGE + ".");
         }
         else {

@@ -51,7 +51,7 @@ public class HourlyEmployeeTest {
         assertEquals(0.0, monthlyTaxToPay, 0.01);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = IllegalHourlyWageException.class)
     public void setHourlyRate_should_throw_IllegalArgumentException_when_hourly_rate_is_set_below_federal_minimum_wage() {
         Employee mary = new HourlyEmployee("mary",
                 LocalDate.of(2010, 2, 3),
