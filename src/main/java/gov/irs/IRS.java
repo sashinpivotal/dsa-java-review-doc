@@ -5,6 +5,18 @@ import java.util.List;
 
 public class IRS {
 
+    private static IRS instance;
+
+    private IRS() {
+    }
+
+    public static IRS getInstance() {
+        if (instance == null) {
+            instance = new IRS();
+        }
+        return instance;
+    }
+
     private List<TaxPayer> taxPayers = new ArrayList<>();
 
     public double computeTotalMonthlyTaxToCollect() {
@@ -17,6 +29,14 @@ public class IRS {
 
     public void register(TaxPayer taxPayer) {
         taxPayers.add(taxPayer);
+    }
+
+    public List<TaxPayer> getTaxPayers() {
+        return taxPayers;
+    }
+
+    public void setTaxPayers(List<TaxPayer> taxPayers) {
+        this.taxPayers = taxPayers;
     }
 
 }

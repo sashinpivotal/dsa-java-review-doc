@@ -37,12 +37,12 @@ Each step will be captured as a "tag" so that students can see the progress of t
   
 - Create *com.hr.personnel.Employee* class under *com.hr.personnel* package with the following fields and appropriate accessor methods
   - *String name*
-  - *LocatDate hireDate* 
+  - *LocalDate hireDate* 
 - Add the following methods
   - *String getEmployeeInfo()* method which returns *"name=" + getName() + ", hireDate=" + getHireDate()"*
   - *String work()* method that returns "<name> worked" message
 
-- Write *HRClient* class under *client" sub-package with creates multiple *com.hr.personnel.Employee** objects and calls *getEmployeeInfo* methods of the objects
+- Write *HRClient* class under *client* sub-package with creates multiple *com.hr.personnel.Employee** objects and calls *getEmployeeInfo* methods of the objects
 - Write Unit testing code that verifies that *getEmployeeInfo* and *work* methods work as expected
 
 ## Lab Step 2 (Lab 8,2 of Java I)
@@ -78,7 +78,7 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 ## Lab Step 3 (Lab 8.3 of Java 1)
 
-### Conceepts that will be covered
+### Concepts that will be covered
 
 - Inheritance
 - Overriding methods
@@ -107,7 +107,7 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 - Abstract class
 
-### Concreate steps
+### Concrete steps
 
 - Convert *.Employee* class as abstract class making *computeMonthlyCompensation()* as an abstract method
 - Refactor other code
@@ -118,7 +118,7 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 - Interface
 
-### Concreate steps
+### Concrete steps
 
 - Create *TaxPayer* interface under *gov.irs* package with the following methods
   - double computeMonthlyTaxToPay();   /// returns amount of tax to pay
@@ -151,7 +151,7 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 - Default method in an Java interface
 
-### Concreate steps
+### Concrete steps
 
 - Add the following method to the *TaxPayer* interface
 
@@ -174,7 +174,7 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 - Throwing an exception
 
-### Concreate steps
+### Concrete steps
   
 - Add the following to the *HourlyEmployee* class
   -     public static final double FEDERAL_MINIMUM_HOURLY_WAGE = 7.0;
@@ -201,13 +201,13 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 - Create custom exception
 
-### Concreate steps
+### Concrete steps
 
 - Create and use *IllegalHourlyWageException* class instead of *IllegalArgumentException*
 
 - (Optional) If monthly salary for *SalariedEmployee* is set with more than 1 million dollars, throw "MorallyWrongWageException"
 
-## Lab Setp 9 (Lab 11.1)
+## Lab Step 9 (Lab 11.1)
 
 ### Concepts that will be exercised
 

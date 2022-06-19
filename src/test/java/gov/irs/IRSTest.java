@@ -14,11 +14,18 @@ import static org.junit.Assert.assertEquals;
 
 public class IRSTest {
 
-    private IRS irs;
+    private static IRS irs;
+
+    @BeforeClass
+    public static void beforeClass() throws Exception {
+        irs = IRS.getInstance();
+    }
 
     @Before
     public void setUp() throws Exception {
-        irs = new IRS();
+        // We need to clear the taxPayers before each test
+        List<TaxPayer> taxPayers = IRS.getInstance().getTaxPayers();
+        taxPayers.clear();
 
         Corporation yourCompany = new Corporation("yourCompany", 200000.0);
         irs.register(yourCompany);
