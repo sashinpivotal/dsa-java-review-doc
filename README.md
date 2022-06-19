@@ -117,18 +117,29 @@ Each step will be captured as a "tag" so that students can see the progress of t
 ### Concreate steps
 
 - Create *TaxPayer* interface under *gov.irs* package with the following methods
-  - double computeTax();   /// returns amount of tax to pay
+  - double computeMonthlyTaxToPay();   /// returns amount of tax to pay
 - Add the following constants to the interface
   - public static final double HOURLY_TAX_RATE = 0.25;
   - public static final double SALARIED_TAX_RATE = 0.30;
 
 - Make *com.hr.personnel.Employee* abstract class to implement *TaxPayer* interface
 - Refactor *SalariedEmployee* and "HourlyEmployee* classes accordingly
+- Refactor *SalariedEmployeeTest* and "HourlyEmployeeTest* classes accordingly
 
-- Create *Corporation* class, which also implements *TaxPayer* interface
+- Create *Corporation* class under "com.hr.corp" package with the following fields
+  - String name;
+- Add the following to the *TaxPayer* interface
+  - public static final double CORP_TAX_RATE = 0.10;
+- Make *Corporation* class implement *TaxPayer* interface
+- Write *CorporationTest* class
 
-- Create *IRS* class under *gov.irs* package with the following methods
-  - double collectTaxes(); // collect Tax
+- Create *IRS* class under *gov.irs* package with the following fields 
+  - private TaxPayer[] taxPayers = new TaxPayer[100];
+  - private int currentIndex = 0;  // for dealing with the array
+- Add the following methods to the *IRS* class
+  - double computeTotalMonthlyTaxToCollect(); // collect Tax
+  - public void register(TaxPayer payer)
+- Write *IRSTest* class testing *computeTotalMonthlyTaxToCollect()* method
 
 ## Lab Step 6 (lab 9.2)
 

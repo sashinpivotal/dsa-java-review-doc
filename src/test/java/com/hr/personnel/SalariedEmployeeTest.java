@@ -25,4 +25,10 @@ public class SalariedEmployeeTest {
         Assert.assertEquals(2000.0, monthlyCompensation, 0.1);
     }
 
+    @Test
+    public void computeMonthlyTaxToPay_should_compute_monthly_tax_correctly() {
+        double monthlyTaxToPay = mary.computeMonthlyTaxToPay();
+        assertEquals(600.0, monthlyTaxToPay, 0.01);
+    }
+
 }

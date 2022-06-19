@@ -21,4 +21,9 @@ public class HourlyEmployee extends Employee{
     public double computeMonthlyCompensation() {
         return hoursWorkedPerMonth * hourlyRate;
     }
+
+    @Override
+    public double computeMonthlyTaxToPay() {
+        return computeMonthlyCompensation() * SALARIED_TAX_RATE;
+    }
 }

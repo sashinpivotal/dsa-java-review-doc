@@ -28,12 +28,18 @@ public class HourlyEmployeeTest {
     @org.junit.Test
     public void getEmployeeInfo_should_return_correct_value_given_a_valid_employee() {
         String employeeInfo = jon.getEmployeeInfo();
-        assertEquals("name = jon, hireDate = 2010-02-03", employeeInfo);getEmployeeInfo_should_return_correct_value_given_a_valid_employee();
+        assertEquals("name = jon, hireDate = 2010-02-03", employeeInfo);
     }
 
     @org.junit.Test
     public void work_should_return_valid_String() {
         String work = jon.work();
         assertEquals("jon worked", work);
+    }
+
+    @Test
+    public void computeMonthlyTaxToPay_should_compute_monthly_tax_correctly() {
+        double monthlyTaxToPay = jon.computeMonthlyTaxToPay();
+        assertEquals(300.0, monthlyTaxToPay, 0.01);
     }
 }
