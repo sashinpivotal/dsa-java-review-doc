@@ -12,6 +12,10 @@ public class Employee {
         this.hireDate = hireDate;
     }
 
+    public double computeMonthlyCompensation() {
+        return 0;
+    }
+
     public String getEmployeeInfo() {
         return ("name = " + getName() + ", hireDate = " + getHireDate() );
     }

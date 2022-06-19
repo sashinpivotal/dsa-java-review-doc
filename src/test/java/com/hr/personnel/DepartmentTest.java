@@ -15,8 +15,12 @@ public class DepartmentTest {
     @Before
     public void setUp() throws Exception {
         department = new Department("engineering", "building2");
-        department.addEmployee(new Employee("jon", LocalDate.of(2020,1,1)));
-        department.addEmployee(new Employee("kane", LocalDate.of(2015,3,2)));
+        department.addEmployee(new SalariedEmployee("jon",
+                LocalDate.of(2020, 1, 1),
+                3000.0));
+        department.addEmployee(new HourlyEmployee("mary",
+                LocalDate.of(2010, 3, 12),
+                200, 10.0));
     }
 
     @Test
@@ -26,8 +30,14 @@ public class DepartmentTest {
     }
 
     @Test
-    public void letEmployeesWorkAndReturnNumberOfEmployeesWhoWorked() {
+    public void letEmployeesWorkAndReturnNumberOfEmployeesWhoWorked_should_return_correct_number() {
         int numberOfEmployeesWhoWorked = department.letEmployeesWorkAndReturnNumberOfEmployeesWhoWorked();
         Assert.assertEquals(2, numberOfEmployeesWhoWorked);
+    }
+
+    @Test
+    public void computeDepartmentMonthlyTotalCompensation_should_return_correct_value() {
+        double departmentMonthlyTotalCompensation = department.computeDepartmentMonthlyTotalCompensation();
+        Assert.assertEquals(5000.0, departmentMonthlyTotalCompensation, 0.01);
     }
 }

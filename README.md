@@ -81,15 +81,21 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 ### Concrete steps to take
 
-- Add *computeMonthlyCompensation()* to the *com.hr.personnel.Employee* class
+- Add the following method to the *Employee* class
+  - double computeMonthlyCompensation();
 
-- *SalaryedEmployee* class implements *computeMonthlyCompensation()* method using *monthlySalary* private field
-- *HourlyEmployee* class implements *computeMonthlyCompensation()* method using *hourlyRate* and *numberOfHoursWorkedPerMonth* fields
-- Add *CommissionedEmployee* class with the following fields
+- *SalariedEmployee* class implements *computeMonthlyCompensation()* method using *monthlySalary* private field
+- *HourlyEmployee* class implements *computeMonthlyCompensation()* method using *hourlyRate* and *hoursWorkedPerMonth* fields
+
+- Add the following method to the *Department* class
+  - double computeDepartmentMonthlyTotalCompensation()
+  
+- (Optional) Add *CommissionedEmployee* class with the following fields
   - private double commissionRate;
   - private ArrayList<Double> sales
 
 - Write Unit testing code for both *SalariedEmployee* and *HourlyEmployee* classes
+- Write testing method to the *DepartmentTest* class testing *computeDepartmentMonthlyTotalCompensation()* method
 
 ## Lab Step 4 (Lab 8.4)
 

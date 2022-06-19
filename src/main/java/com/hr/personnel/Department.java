@@ -33,4 +33,21 @@ public class Department {
         return numberOfEmployeesWhoWorked;
     }
 
+    public double computeDepartmentMonthlyTotalCompensation() {
+        double departmentMonthlyTotalCompensation = 0.0;
+        for (int i = 0; i < currentIndex; i++) {
+            double monthlyCompensation = employees[i].computeMonthlyCompensation();
+            departmentMonthlyTotalCompensation += monthlyCompensation;
+        }
+        return departmentMonthlyTotalCompensation;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
 }
