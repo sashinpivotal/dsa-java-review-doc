@@ -15,6 +15,8 @@ The goal of this 1-day lab is to review basic yet essential Java features for DS
 - Singleton
 - Constants class
 - JSON utility (Simple JSON)
+- Composition
+- Enum
 
 ## Advanced topics
 
@@ -327,7 +329,50 @@ salariedEmployeesJSON.forEach(employee -> {
 });
 ```
 
+## Lab Step 13
 
+### Concepts that will be exercises
 
+- Composition
+- Enum
 
+### Concrete steps
+
+- Create *CompanyHealth* enum with tge following values
+  - HEALTHY
+  - OK
+  - SICK
+
+- Create *Auditor* class with *performMonthlyAudit* method as following
+
+```
+public CompanyHealth performMonthlyAudit(double monthlyProfit, 
+                                        double monthlyFixedCost, 
+                                        double monthlyTaxToPay ) {
+
+    CompanyHealth companyHealth = CompanyHealth.OK;
+
+    if (monthlyProfit > monthlyFixedCost + monthlyTaxToPay) {
+        companyHealth = CompanyHealth.HEALTHY;
+    } else if (monthlyProfit < monthlyFixedCost + monthlyTaxToPay) {
+        companyHealth = CompanyHealth.SICK;
+    }
+
+    return companyHealth;
+}
+```
+
+- Create and run *AuditorTest*
+- Add the following code to *Corpoation* class
+
+```
+public static final double MONTHLY_FIXED_COST = 10000.0;
+
+public CompanyHealth performMonthlyAudit() {
+    return auditor.performMonthlyAudit(monthlyProfit, MONTHLY_FIXED_COST, computeMonthlyTaxToPay());
+}
+```
+
+- Create *CorpClient* class under *com.hr.corp.client" package
+  - Write code to get company health 
     
