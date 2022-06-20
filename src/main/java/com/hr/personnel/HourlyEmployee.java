@@ -2,9 +2,10 @@ package com.hr.personnel;
 
 import java.time.LocalDate;
 
-public class HourlyEmployee extends Employee {
+import static com.hr.personnel.EmployeeConstants.FEDERAL_MINIMUM_HOURLY_WAGE;
+import static gov.irs.TaxConstants.HOURLY_TAX_RATE;
 
-    public static final double FEDERAL_MINIMUM_HOURLY_WAGE = 7.0;
+public class HourlyEmployee extends Employee {
 
     private int hoursWorkedPerMonth;
 

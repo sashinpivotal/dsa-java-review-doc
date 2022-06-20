@@ -1,6 +1,6 @@
 # dsa-java-review
 
-The goal of this 1-day lab is to review basic yet essential Java features for DS&A students. St
+The goal of this 1-day lab is to review basic yet essential Java features for DS&A students. 
 
 ## Essential topics to be covered
 
@@ -13,6 +13,7 @@ The goal of this 1-day lab is to review basic yet essential Java features for DS
 - Collection classes
 - Unit Testing
 - Singleton
+- Constants class
 
 ## Advanced topics
 
@@ -109,7 +110,7 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 ### Concrete steps
 
-- Convert *.Employee* class as abstract class making *computeMonthlyCompensation()* as an abstract method
+- Convert *Employee* class as abstract class making *computeMonthlyCompensation()* as an abstract method
 - Refactor other code
 
 ## Lab Step 5 (lab 9.1)
@@ -177,7 +178,7 @@ Each step will be captured as a "tag" so that students can see the progress of t
 ### Concrete steps
   
 - Add the following to the *HourlyEmployee* class
-  -     public static final double FEDERAL_MINIMUM_HOURLY_WAGE = 7.0;
+  - public static final double FEDERAL_MINIMUM_HOURLY_WAGE = 7.0;
 
 - Refactor *setHourlyRate* method to throw *IllegalArgumentException* in the *HourlyEmployee* class when the *hourlyRate* is smaller than *FEDERAL_MINIMUM_HOURLY_WAGE*
 
@@ -230,15 +231,18 @@ Each step will be captured as a "tag" so that students can see the progress of t
 ### Concrete steps
 
 - Refactor *IRS* class as a singleton class
-- Refactor *IRSTest" accordingly
+- Refactor *IRSTest* accordingly
 
 ## Lab Step 11
 
 ### Concepts that will be exercises
 
-- Enum
+- Constant class
 
 ### Concrete steps
+
+- Create *com.hr.personnel.EmployeeConstants* and *gov.irs.YaxConstants* classes
+- Move all constants to these classes
 
 
 

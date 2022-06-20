@@ -2,6 +2,8 @@ package com.hr.corp;
 
 import gov.irs.TaxPayer;
 
+import static gov.irs.TaxConstants.CORP_TAX_RATE;
+
 public class Corporation implements TaxPayer {
 
     private String name;

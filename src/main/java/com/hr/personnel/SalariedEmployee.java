@@ -2,6 +2,8 @@ package com.hr.personnel;
 
 import java.time.LocalDate;
 
+import static gov.irs.TaxConstants.SALARIED_TAX_RATE;
+
 public class SalariedEmployee extends Employee {
 
     private double monthlySalary;
