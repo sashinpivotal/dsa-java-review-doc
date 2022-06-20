@@ -14,6 +14,7 @@ The goal of this 1-day lab is to review basic yet essential Java features for DS
 - Unit Testing
 - Singleton
 - Constants class
+- JSON utility (Simple JSON)
 
 ## Advanced topics
 
@@ -32,35 +33,37 @@ Each step will be captured as a "tag" so that students can see the progress of t
 - Writing Java class and creating an object
 - Unit testing
 
-### Concrete steps to take
+### Steps to take
 
 - Create Maven project
   
 - Create *com.hr.personnel.Employee* class under *com.hr.personnel* package with the following fields and appropriate accessor methods
-  - *String name*
-  - *LocalDate hireDate* 
+  - String name
+  - LocalDate hireDate
 - Add the following methods
   - *String getEmployeeInfo()* method which returns *"name=" + getName() + ", hireDate=" + getHireDate()"*
   - *String work()* method that returns "<name> worked" message
 
-- Write *HRClient* class under *client* sub-package with creates multiple *com.hr.personnel.Employee** objects and calls *getEmployeeInfo* methods of the objects
-- Write Unit testing code that verifies that *getEmployeeInfo* and *work* methods work as expected
+- Write *HRClient* class under *com.hr.personnel.client* sub-package 
+  - Create multiple *com.hr.personnel.Employee** objects and calls *getEmployeeInfo* methods of those objects
+  
+- Write Unit testing code of *com.hr.personnel.Employee* class
+  - Verify that *getEmployeeInfo* and *work* methods work as expected
 
 ## Lab Step 2 (Lab 8,2 of Java I)
 
 ### Concepts that will be covered during the step
 
 - Inheritance
-- Overriding methods
 
-### Concepts that will be covered
+### Steps to take
 
 - Create *SalariedEmployee* and *HourlyEmployee classes extending *com.hr.personnel.Employee* class
-- Add the following fields and appropriate accessor methods to the *SalariedEmployee* class
-  - double salary;
-- Add the following fields and appropriate accessor methods to the *HourlyEmployee* class
-  - int hoursWorked;
-  - double hourlyRate;
+  - Add the following fields and appropriate accessor methods to the *SalariedEmployee* class
+    - double salary;
+  - Add the following fields and appropriate accessor methods to the *HourlyEmployee* class
+    - int hoursWorked;
+    - double hourlyRate;
   
 - Create *Department* class with the following fields:
   - String name
@@ -74,14 +77,11 @@ Each step will be captured as a "tag" so that students can see the progress of t
 - Refactor *HRClient* class to use *Department* class
 - Write unit test code for *Department* class
 
-- (Optional) add the following method to *Department* class
-  - void removeEmployee(String employeeName)
 
 ## Lab Step 3 (Lab 8.3 of Java 1)
 
 ### Concepts that will be covered
 
-- Inheritance
 - Overriding methods
 
 ### Concrete steps to take
@@ -89,18 +89,19 @@ Each step will be captured as a "tag" so that students can see the progress of t
 - Add the following method to the *Employee* class
   - double computeMonthlyCompensation();
 
-- *SalariedEmployee* class implements *computeMonthlyCompensation()* method using *monthlySalary* private field
-- *HourlyEmployee* class implements *computeMonthlyCompensation()* method using *hourlyRate* and *hoursWorkedPerMonth* fields
+- Implement *computeMonthlyCompensation()* method in the *SalariedEmployee* class using *monthlySalary* private field
+- Implement *computeMonthlyCompensation()* method in the *HourlyEmployee* class using *hourlyRate* and *hoursWorkedPerMonth* fields
 
 - Add the following method to the *Department* class
   - double computeDepartmentMonthlyTotalCompensation()
   
-- (Optional) Add *CommissionedEmployee* class with the following fields
-  - private double commissionRate;
-  - private ArrayList<Double> sales
-
 - Write Unit testing code for both *SalariedEmployee* and *HourlyEmployee* classes
 - Write testing method to the *DepartmentTest* class testing *computeDepartmentMonthlyTotalCompensation()* method
+
+- (Optional) Add *CommissionedEmployee* class with the following fields
+  - private double commissionRate
+  - private ArrayList<Double> sales
+- (Optional) Write testing code for *CommissionedEmployee* class
 
 ## Lab Step 4 (Lab 8.4)
 
@@ -110,8 +111,9 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 ### Concrete steps
 
-- Convert *Employee* class as abstract class making *computeMonthlyCompensation()* as an abstract method
-- Refactor other code
+- Convert *Employee* class as abstract class
+  - Make *computeMonthlyCompensation()* as an abstract method
+- Refactor other code accordingly
 
 ## Lab Step 5 (lab 9.1)
 
@@ -157,11 +159,11 @@ Each step will be captured as a "tag" so that students can see the progress of t
 - Add the following method to the *TaxPayer* interface
 
 ```
-    public static final double DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION = 250.0;
+public static final double DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION = 250.0;
 
-    default public double getStandardEmployeeMonthlyDeduction() {
-        return DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION;
-    }
+default public double getStandardEmployeeMonthlyDeduction() {
+    return DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION;
+}
 ```
 
 - Refactor *computeMonthlyTaxToPay* methods of *HourlyEmployee* and *SalariedEmployee* classes accordingly
@@ -183,15 +185,15 @@ Each step will be captured as a "tag" so that students can see the progress of t
 - Refactor *setHourlyRate* method to throw *IllegalArgumentException* in the *HourlyEmployee* class when the *hourlyRate* is smaller than *FEDERAL_MINIMUM_HOURLY_WAGE*
 
 ```
-    public void setHourlyRate(double hourlyRate) {
-        if (hourlyRate < FEDERAL_MINIMUM_HOURLY_WAGE) {
-            throw new IllegalArgumentException("Illegal wage: " + hourlyRate + "." +
-                    " Federal minimum wage is " + FEDERAL_MINIMUM_HOURLY_WAGE + ".");
-        }
-        else {
-            this.hourlyRate = hourlyRate;
-        }
+public void setHourlyRate(double hourlyRate) {
+    if (hourlyRate < FEDERAL_MINIMUM_HOURLY_WAGE) {
+        throw new IllegalArgumentException("Illegal wage: " + hourlyRate + "." +
+                " Federal minimum wage is " + FEDERAL_MINIMUM_HOURLY_WAGE + ".");
     }
+    else {
+        this.hourlyRate = hourlyRate;
+    }
+}
 ```
 
 - Refactor *HourlyEmployeeTest* test accordingly
@@ -200,7 +202,7 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 ### Concepts that will be exercised
 
-- Create custom exception
+- Create a custom exception
 
 ### Concrete steps
 
@@ -216,10 +218,12 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 ### Concrete steps
 
-- Refactor *Department* class to user proper collection object of *Employee* instead of an array based on the following requiements
+- Refactor *Department* class to use a proper collection object of *Employee* rather than an array
 - Remove *currentIndex* field from the *Department* class
-- Refactor *IRS* class to use *ArrayList* instead of an array
+
+- Refactor *IRS* class to use *ArrayList* rather than an array
 - Remove *currentIndex* field from the *IRS* class
+
 - Refactor any test code accordingly
 
 ## Lab Step 10
@@ -243,6 +247,85 @@ Each step will be captured as a "tag" so that students can see the progress of t
 
 - Create *com.hr.personnel.EmployeeConstants* and *gov.irs.YaxConstants* classes
 - Move all constants to these classes
+
+## Lab Step 12
+
+### Concepts that will be exercises
+
+- Using JSON utility class to read JSON data from a file
+
+### Concrete steps
+
+- Add *Simple JSON* dependency to the *pom.xml"
+
+```
+<dependency>
+    <groupId>com.googlecode.json-simple</groupId>
+    <artifactId>json-simple</artifactId>
+    <version>1.1.1</version>
+</dependency>
+```
+
+- Create *SimpleJSONUtility* class under *utilities" package with the following code
+
+```
+package utilities;
+
+import com.hr.personnel.Employee;
+import com.hr.personnel.SalariedEmployee;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.time.LocalDate;
+
+public class SimpleJSONUtility {
+
+    private static JSONArray salariedEmployeesJSONArray;
+
+    public static JSONArray readSalariedEmployeesJSON(String filePath)  {
+        JSONParser jsonParser = new JSONParser();
+
+        try (FileReader fileReader = new FileReader(filePath)) {
+
+            Object object = jsonParser.parse(fileReader);
+            salariedEmployeesJSONArray = (JSONArray) object;
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return salariedEmployeesJSONArray;
+    }
+
+    public static Employee parseEmployeeObject(JSONObject salariedEmployeeJSONObject) {
+        JSONObject employeeObject = (JSONObject) salariedEmployeeJSONObject.get("employee");
+        String name = (String) employeeObject.get("name");
+        String hireDate = (String) employeeObject.get("hireDate");
+        String salary = (String) employeeObject.get("salary");
+        return new SalariedEmployee(name, LocalDate.parse(hireDate), Double.valueOf(salary));
+    }
+
+}
+```
+
+- Modify *HRClient* to read JSON SalariedEmployee data and register them to the *Department* object.  You can leverage the following code fragment:
+
+```
+JSONArray salariedEmployeesJSON
+        = SimpleJSONUtility.readSalariedEmployeesJSON(JsonFilePath);
+salariedEmployeesJSON.forEach(employee -> {
+    Employee employeeObject = SimpleJSONUtility.parseEmployeeObject((JSONObject) employee);
+    department.addEmployee(employeeObject);
+});
+```
 
 
 
