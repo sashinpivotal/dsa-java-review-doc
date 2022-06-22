@@ -8,20 +8,21 @@ public class Department {
     private String name;
     private String location;
 
-    private List<Employee> employees = new ArrayList<>();
+    private DepartmentDAO departmentDAO;
 
     public Department(String name, String location) {
         this.name = name;
         this.location = location;
     }
 
-    public void addEmployee(Employee employee) {
-        employees.add(employee);
+    public Department(String name, String location, DepartmentDAO departmentDAO) {
+        this(name, location);
+        this.departmentDAO = departmentDAO;
     }
 
     public int letEmployeesWorkAndReturnNumberOfEmployeesWhoWorked() {
         int numberOfEmployeesWhoWorked = 0;
-        for (Employee employee: employees) {
+        for (Employee employee: departmentDAO.getEmployees()) {
             String work = employee.work();
             if (work.contains("worked")) {
                 numberOfEmployeesWhoWorked++;
@@ -32,7 +33,7 @@ public class Department {
 
     public double computeDepartmentMonthlyTotalCompensation() {
         double departmentMonthlyTotalCompensation = 0.0;
-        for (Employee employee: employees) {
+        for (Employee employee: departmentDAO.getEmployees()) {
             double monthlyCompensation = employee.computeMonthlyCompensation();
             departmentMonthlyTotalCompensation += monthlyCompensation;
         }
@@ -47,8 +48,7 @@ public class Department {
         return location;
     }
 
-    public List<Employee> getEmployees() {
-        return employees;
+    public DepartmentDAO getDepartmentDAO() {
+        return departmentDAO;
     }
-
 }

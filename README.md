@@ -21,6 +21,7 @@ The goal of this 1-day lab is to review basic yet essential Java features for DS
 ## Advanced topics
 
 - Unit testing using Mockito
+- DAO (Data Access Object) layer
 - Generics
 - TDD practices
 - Lambda, Functional Interface, and Streams
@@ -472,3 +473,31 @@ public class CorporationTest {
 }
 ```
 - Run all tests and verify success
+
+## Lab Step 15 (Optional)
+
+### Concepts that will be exercises
+
+- DAO (Data Access Object) layer
+
+### Concrete steps to take
+
+- Create *DepartmentDAO* class as following - it is now responsbile for managing Employee data
+
+```
+public class DepartmentDAO {
+
+    private List<Employee> employees = new ArrayList<>();
+
+    public void addEmployee(Employee employee) {
+        employees.add(employee);
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+}
+```
+
+- Refactor other code accordingly
+

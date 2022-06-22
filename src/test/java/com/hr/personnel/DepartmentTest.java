@@ -10,21 +10,23 @@ import static org.junit.Assert.assertEquals;
 public class DepartmentTest {
 
     private Department department;
+    private DepartmentDAO departmentDAO;
 
     @Before
     public void setUp() throws Exception {
-        department = new Department("engineering", "building2");
-        department.addEmployee(new SalariedEmployee("jon",
+        department = new Department("engineering", "building2", new DepartmentDAO());
+        departmentDAO = department.getDepartmentDAO();
+        departmentDAO.addEmployee(new SalariedEmployee("jon",
                 LocalDate.of(2020, 1, 1),
                 3000.0));
-        department.addEmployee(new HourlyEmployee("mary",
+        departmentDAO.addEmployee(new HourlyEmployee("mary",
                 LocalDate.of(2010, 3, 12),
                 200, 10.0));
     }
 
     @Test
     public void addEmployee_should_add_an_employee_correctly() {
-        assertEquals(2, department.getEmployees().size());
+        assertEquals(2, departmentDAO.getEmployees().size());
     }
 
     @Test

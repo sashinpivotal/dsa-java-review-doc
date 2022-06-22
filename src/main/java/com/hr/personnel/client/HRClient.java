@@ -1,9 +1,6 @@
 package com.hr.personnel.client;
 
-import com.hr.personnel.Department;
-import com.hr.personnel.Employee;
-import com.hr.personnel.HourlyEmployee;
-import com.hr.personnel.SalariedEmployee;
+import com.hr.personnel.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import utilities.SimpleJSONUtility;
@@ -26,15 +23,16 @@ public class HRClient {
                 LocalDate.of(2010, 3, 12),
                 200, 10.0);
 
-        Department department = new Department("marketing", "building3");
-        department.addEmployee(jon);
-        department.addEmployee(mary);
+        Department department = new Department("marketing", "building3", new DepartmentDAO());
+        DepartmentDAO departmentDAO = department.getDepartmentDAO();
+        departmentDAO.addEmployee(jon);
+        departmentDAO.addEmployee(mary);
 
         JSONArray salariedEmployeesJSON
                 = SimpleJSONUtility.readSalariedEmployeesJSON(JsonFilePath);
         salariedEmployeesJSON.forEach(employee -> {
             Employee employeeObject = SimpleJSONUtility.parseEmployeeObject((JSONObject) employee);
-            department.addEmployee(employeeObject);
+            departmentDAO.addEmployee(employeeObject);
         });
 
         int numberOfEmployeesWhoWorked = department.letEmployeesWorkAndReturnNumberOfEmployeesWhoWorked();
@@ -43,7 +41,7 @@ public class HRClient {
         double departmentMonthlyTotalCompensation = department.computeDepartmentMonthlyTotalCompensation();
         System.out.println(department.getName() + "total monthly compensation = " + departmentMonthlyTotalCompensation);
 
-        department
+        departmentDAO
                 .getEmployees()
                 .forEach(employee -> System.out.println(employee.getEmployeeInfo()));
 
