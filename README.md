@@ -20,6 +20,7 @@ The goal of this 1-day lab is to review basic yet essential Java features for DS
 
 ## Advanced topics
 
+- Unit testing using Mockito
 - Generics
 - TDD practices
 - Lambda, Functional Interface, and Streams
@@ -350,15 +351,15 @@ public CompanyHealth performMonthlyAudit(double monthlyProfit,
                                         double monthlyFixedCost, 
                                         double monthlyTaxToPay ) {
 
-    CompanyHealth companyHealth = CompanyHealth.OK;
+    CompanyHealth auditorOpinion = CompanyHealth.OK;
 
     if (monthlyProfit > monthlyFixedCost + monthlyTaxToPay) {
-        companyHealth = CompanyHealth.HEALTHY;
+        auditorOpinion = CompanyHealth.HEALTHY;
     } else if (monthlyProfit < monthlyFixedCost + monthlyTaxToPay) {
-        companyHealth = CompanyHealth.SICK;
+        auditorOpinion = CompanyHealth.SICK;
     }
 
-    return companyHealth;
+    return auditorOpinion;
 }
 ```
 
@@ -376,3 +377,98 @@ public CompanyHealth performMonthlyAudit() {
 - Create *CorpClient* class under *com.hr.corp.client" package
   - Write code to get company health 
     
+## Lab Step 14 (Optional)
+
+### Concepts that will be exercises
+
+- Unit testing with Mockito
+
+### Concrete steps
+
+- Add Mockito depdendency to *pom.xml*
+
+```
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>4.5.1</version>
+    <scope>test</scope>
+</dependency>
+```
+
+- Refactor *Auditor* Code as following
+
+```
+public class Auditor {
+
+    public double performMonthlyAudit(double monthlyIncome,
+                                             double monthlyFixedCost,
+                                             double monthlyTaxToPay ) {
+        return monthlyIncome - (monthlyFixedCost + monthlyTaxToPay);
+    }
+}
+```
+
+- Refactor *AuditorTest* accordingly
+
+- Refactor *performMonthlyAudit()* method of *Corporation* as following
+
+```
+public CompanyHealth performMonthlyAudit() {
+
+    double monthlyProfit
+            = auditor.performMonthlyAudit(monthlyIncome, MONTHLY_FIXED_COST, computeMonthlyTaxToPay());
+
+    CompanyHealth companyHealth = CompanyHealth.SICK;
+
+    if (monthlyProfit >= MINIMUM_PROFIT_TO_MAKE_TO_BE_HEALTHY) {
+        companyHealth = CompanyHealth.HEALTHY;
+    } else if (monthlyProfit >= MINIMUM_PROFIT_TO_MAKE_TO_BE_OK) {
+        companyHealth = CompanyHealth.OK;
+    }
+
+    return companyHealth;
+
+}
+```
+
+- Refactor *CorporationTest* as following
+
+```
+@RunWith(MockitoJUnitRunner.class)
+public class CorporationTest {
+
+    private Corporation myCorporation;
+
+    @Mock
+    private Auditor auditor;
+
+    @Before
+    public void setUp() throws Exception {
+        myCorporation = new Corporation("myCompany", 1000000.0, auditor);
+    }
+
+    @Test
+    public void computeMonthlyTaxToPay_computes_monthly_tax_correctly() {
+
+        double monthlyTaxToPay = myCorporation.computeMonthlyTaxToPay();
+        assertEquals(100000.0, monthlyTaxToPay, 0.01);
+    }
+
+    @Test
+    public void performMonthlyAudit_should_return_HEALTHY_when_profit_is_greater_than_threshold() {
+
+        // arrange
+        when(auditor.performMonthlyAudit(anyDouble(), anyDouble(), anyDouble()))
+                .thenReturn(MINIMUM_PROFIT_TO_MAKE_TO_BE_HEALTHY);
+
+        // act and assert
+        CompanyHealth companyHealth = myCorporation.performMonthlyAudit();
+        Assert.assertEquals(CompanyHealth.HEALTHY, companyHealth);
+
+        // verify
+        verify(auditor).performMonthlyAudit(anyDouble(), anyDouble(), anyDouble());
+    }
+}
+```
+- Run all tests and verify success
