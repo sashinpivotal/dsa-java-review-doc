@@ -4,14 +4,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import static com.hr.corp.CorporationConstants.MINIMUM_PROFIT_TO_MAKE_TO_BE_HEALTHY;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.anyDouble;
-import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -39,7 +37,7 @@ public class CorporationTest {
     public void performMonthlyAudit_should_return_HEALTHY_when_profit_is_greater_than_threshold() {
 
         // arrange
-        when(auditor.performMonthlyAudit(anyDouble(), anyDouble(), anyDouble()))
+        when(auditor.computeMonthlyProfit(anyDouble(), anyDouble(), anyDouble()))
                 .thenReturn(MINIMUM_PROFIT_TO_MAKE_TO_BE_HEALTHY);
 
         // act and assert
@@ -47,6 +45,6 @@ public class CorporationTest {
         Assert.assertEquals(CompanyHealth.HEALTHY, companyHealth);
 
         // verify
-        verify(auditor).performMonthlyAudit(anyDouble(), anyDouble(), anyDouble());
+        verify(auditor).computeMonthlyProfit(anyDouble(), anyDouble(), anyDouble());
     }
 }

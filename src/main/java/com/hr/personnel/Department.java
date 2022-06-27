@@ -24,7 +24,7 @@ public class Department {
         int numberOfEmployeesWhoWorked = 0;
         for (Employee employee: departmentDAO.getEmployees()) {
             String work = employee.work();
-            if (work.contains("worked")) {
+            if (work.contains(EmployeeConstants.EMPLOYEE_HAS_WORKED_THIS_MONTH)) {
                 numberOfEmployeesWhoWorked++;
             }
         }

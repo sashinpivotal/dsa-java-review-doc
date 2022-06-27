@@ -402,7 +402,7 @@ public CompanyHealth performMonthlyAudit() {
 ```
 public class Auditor {
 
-    public double performMonthlyAudit(double monthlyIncome,
+    public double computeMonthlyProfit(double monthlyIncome,
                                              double monthlyFixedCost,
                                              double monthlyTaxToPay ) {
         return monthlyIncome - (monthlyFixedCost + monthlyTaxToPay);
@@ -418,7 +418,7 @@ public class Auditor {
 public CompanyHealth performMonthlyAudit() {
 
     double monthlyProfit
-            = auditor.performMonthlyAudit(monthlyIncome, MONTHLY_FIXED_COST, computeMonthlyTaxToPay());
+            = auditor.computeMonthlyProfit(monthlyIncome, MONTHLY_FIXED_COST, computeMonthlyTaxToPay());
 
     CompanyHealth companyHealth = CompanyHealth.SICK;
 
@@ -460,7 +460,7 @@ public class CorporationTest {
     public void performMonthlyAudit_should_return_HEALTHY_when_profit_is_greater_than_threshold() {
 
         // arrange
-        when(auditor.performMonthlyAudit(anyDouble(), anyDouble(), anyDouble()))
+        when(auditor.computeMonthlyProfit(anyDouble(), anyDouble(), anyDouble()))
                 .thenReturn(MINIMUM_PROFIT_TO_MAKE_TO_BE_HEALTHY);
 
         // act and assert
@@ -468,7 +468,7 @@ public class CorporationTest {
         Assert.assertEquals(CompanyHealth.HEALTHY, companyHealth);
 
         // verify
-        verify(auditor).performMonthlyAudit(anyDouble(), anyDouble(), anyDouble());
+        verify(auditor).computeMonthlyProfit(anyDouble(), anyDouble(), anyDouble());
     }
 }
 ```

@@ -29,7 +29,7 @@ public abstract class Employee implements TaxPayer {
     }
 
     public String work() {
-        return name + " worked";
+        return name + " " + EmployeeConstants.EMPLOYEE_HAS_WORKED_THIS_MONTH;
     }
 
 }

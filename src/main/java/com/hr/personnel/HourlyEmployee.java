@@ -34,16 +34,8 @@ public class HourlyEmployee extends Employee {
                 0.0 : monthlyTaxToPayBeforeDeduction - standardEmployeeMonthlyDeduction;
     }
 
-    public int getHoursWorkedPerMonth() {
-        return hoursWorkedPerMonth;
-    }
-
     public void setHoursWorkedPerMonth(int hoursWorkedPerMonth) {
         this.hoursWorkedPerMonth = hoursWorkedPerMonth;
-    }
-
-    public double getHourlyRate() {
-        return hourlyRate;
     }
 
     public void setHourlyRate(double hourlyRate) {

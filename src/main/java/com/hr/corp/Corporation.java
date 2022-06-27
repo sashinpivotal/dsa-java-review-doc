@@ -34,7 +34,7 @@ public class Corporation implements TaxPayer {
     public CompanyHealth performMonthlyAudit() {
 
         double monthlyProfit
-                = auditor.performMonthlyAudit(monthlyIncome, MONTHLY_FIXED_COST, computeMonthlyTaxToPay());
+                = auditor.computeMonthlyProfit(monthlyIncome, MONTHLY_FIXED_COST, computeMonthlyTaxToPay());
 
         CompanyHealth companyHealth = CompanyHealth.SICK;
 
