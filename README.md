@@ -1,8 +1,9 @@
 # dsa-java-review
 
-The goal of this 1-day lab is to review basic yet essential Java features for DS&A students. 
+The goal of this 1-day lab is to review and exercise basic yet  
+essential Java concepts and features for the DS&A students. 
 
-## Essential topics to be covered
+## Essential Java concepts covered 
 
 - Java classes and Java objects
 - Encapsulation
@@ -18,7 +19,7 @@ The goal of this 1-day lab is to review basic yet essential Java features for DS
 - Composition
 - Enum
 
-## Advanced topics
+## Advanced Java concepts
 
 - Natural ordering
 - Unit testing using Mockito
@@ -27,21 +28,24 @@ The goal of this 1-day lab is to review basic yet essential Java features for DS
 - TDD practices
 - Lambda, Functional Interface, and Streams
 
-## Steps
+## Solution code
 
-Each step will be captured as a "tag" so that students can see 
-the progress of each step.  Students can see all the tags 
-by typing "git tag".
+The project contains the final solution code
+along with this README.md file.
 
-## Lab step 1 - Create Java class and test (45 minutes)
+The same codebase is also available from 
+[GitHub repo](https://github.com/sashinpivotal/dsa-java-review)
+of this project.
 
-### Concepts that will be exercised during the step
+## Lab step 1 - Java class and objects and Testing (45 minutes)
 
-- Writing Java class and creating an object
+### Concepts that are exercised
+
+- Java class and objects
   - Why Object-Oriented_Programming (OOP)?
   - What is "abstraction"?
   - What is "encapsulation"?
-- Unit testing
+- Unit Testing
   - What is Unit testing for?
 
 ### Steps to take
@@ -50,19 +54,27 @@ by typing "git tag".
   - Take a look at *pom.xml* file
   
 - Create *com.hr.personnel* package
-- Create *Employee* class under the *com.hr.personnel* package with the following fields
+- Create *Employee* class under the *com.hr.personnel* 
+  package with the following fields
   - String name
   - LocalDate hireDate
 - Add the following methods to the *Employee* class
-  - *String getEmployeeInfo()* method which returns *String* type of something like "name = sang, hireDate = 2020-02-03"
-  - *String work()* method that just returns "<name> worked" message
+  - *String getEmployeeInfo()* method which returns *String* 
+    type of "name = <employee-name>, hireDate = 2020-02-03"
+  - *String work()* method that just returns *String*
+    type of "<employee-name> worked"
 
+- Create *com.hr.personnel.client* sub-package
 - Write *HRClient* class under *com.hr.personnel.client* sub-package 
-  - Create two *com.hr.personnel.Employee** objects and calls *getEmployeeInfo* methods of those objects
+  - Create two *com.hr.personnel.Employee** objects 
+    and calls *getEmployeeInfo* methods of those objects
+  - Display the result in the console
   
 - Add JUnit 4 dependency to the *pom.xm* as following. 
-  Make sure to refresh Maven (click the Maven refresh icon)
-  so that IntelliJ download the *junit* dependency.
+  Make sure to refresh Maven (click the Maven refresh icon
+  in the top-right corner of the editor window of IntelliJ)
+  so that IntelliJ download and install the *junit* dependency
+  into local Maven repository.
 
 ```xml
     <dependencies>
@@ -103,7 +115,7 @@ by typing "git tag".
 
 ## Lab Step 2 - Inheritance (30 minutes)
 
-### Concepts that will be exercised during the step
+### Concepts that are exercised
 
 - Inheritance
   - When do you want to use inheritance?
@@ -117,16 +129,19 @@ by typing "git tag".
   - Add the following fields and appropriate accessor 
     methods to the *SalariedEmployee* class
     - double monthlySalary;
+    
   - Add the following fields and appropriate accessor 
     methods to the *HourlyEmployee* class
     - int hoursWorkedPerMonth;
     - double hourlyRate;
 
-- Refactor *HRClient* class to create two *SalariedEmployee*
-  objects and one *HourlyEmployee* objects replacing
-  *Employee* objects
+- Refactor *HRClient* class
+  - Create two *SalariedEmployee*
+    objects and one *HourlyEmployee* objects replacing
+    *Employee* objects
   
-- Create *com.hr.personnel.Department* class with the following fields:
+- Create *Department* class under the *com.hr.personnel*
+  package with the following fields:
   - String name
   - String location
   - com.hr.personnel.Employee[] employees array with size of 100 
@@ -145,7 +160,6 @@ by typing "git tag".
 ### Quiz
 
 - Can a sub-class access private fields or methods of a parent class?
-- What fields does an *HourlyEmployee* object have?
 - Is the following code going to work?
   If no, can compiler detect the problem?
 
@@ -155,9 +169,9 @@ String name = employee.getName();
 double salary = employee.getSalary()
 ```
 
-## Lab Step 3 - Polymorphism
+## Lab Step 3 - Polymorphism (30 minutes)
 
-### Concepts that will be exercised
+### Concepts that are exercised
 
 - Overriding methods 
   - What is an "overriding method"? When do you want to use it?
@@ -186,7 +200,7 @@ double salary = employee.getSalary()
   
 - Write testing code for both *SalariedEmployee* 
   and *HourlyEmployee* classes testing
-  *computeMonthlyCompensation()* method
+  *computeMonthlyCompensation()* method 
 
 - Add code in the *HRClient* class to display the result of
   calling *computeDepartmentMonthlyTotalCompensation()* method
@@ -210,13 +224,13 @@ double salary = employee.getSalary()
 
 ### Quiz
 
-- Is it mandatory to use *@Override* annotation on 
+- Is it mandatory to use *@Override* annotation onto 
   an "overriding method"?
 - If not, why is the usage of it still recommended?
 
-## Lab Step 4 - Abstract class
+## Lab Step 4 - Abstract class (20 minutes)
 
-### Concepts that will be exercised
+### Concepts that are exercised
 
 - Abstract class
   - What is an abstract class?
@@ -231,17 +245,18 @@ double salary = employee.getSalary()
 
 ### Optional exercise
 
-- Convert *getEmployeeInfo()* into an abstract method
+- Convert *getEmployeeInfo()* of the *Employee* class
+  into an abstract method
 
 ### Quiz
 
 - All abstract methods of an abstract class need to be 
-  implemented in a class that extends the abstract class:
+  implemented in a class that extends that abstract class:
   true or false?
 
-## Lab Step 5 - Interface
+## Lab Step 5 - Interface (45 minutes)
 
-### Concepts that will be exercised
+### Concepts that are exercised
 
 - Interface
   - When do you want to use Java interface?
@@ -274,7 +289,7 @@ double salary = employee.getSalary()
   - public static final double CORP_TAX_RATE = 0.10;
 - Make *Corporation* class implement *TaxPayer* interface
   - Corp tax can be computed as *monthlyIncome * CORP_TAX_RATE*
-- Write *CorporationTest* class
+- Write *CorporationTest* class testing *computeMonthlyTaxToPay()*
 
 - Create *IRS* class under *gov.irs* package with the following fields 
   - private TaxPayer[] taxPayers = new TaxPayer[100];
@@ -291,18 +306,20 @@ double salary = employee.getSalary()
   - Compare them based on *hireDate* first
   - If multiple employees have the same *hireDate*, 
     use their *name* next
+
 - Add *Comparable* interface to the *Employee* class
-- Refactor other code accordingly
+- Refactor code accordingly
 
 ### Quiz
 
 - You have to use *abstract* keyword in each of the methods defined in 
   a Java interface, true or false?
 - A class can implement multiple Java interfaces, true or false?
+- An abstract class cannot implement Java interfaces, true or false?
 
-## Lab Step 6 - Default method
+## Lab Step 6 - Default method (20 minutes)
 
-### Concepts that will be exercised
+### Concepts that are exercised
 
 - Default method in a Java interface
 
@@ -321,14 +338,16 @@ default double computeStandardEmployeeMonthlyDeduction() {
 - Refactor *computeMonthlyTaxToPay* methods of *HourlyEmployee* 
   and *SalariedEmployee* classes as following
   - Apply DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION when
-    computing monthly tax pay  
+    computing monthly tax to pay  
   - When the monthly tax to pay is less than or equal to 
     the DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION, 
     return 0.0
+  
 - Refactor *HourlyEmployeeTest* and *SalariedEmployeeTest* testing
   code accordingly
   - Make sure you test the case in which the monthly tax to pay 
     is less than or equal to the DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION
+  
 - Refactor *IRSTest* testing code accordingly
 
 ### Optional exercise
@@ -345,16 +364,18 @@ default double computeStandardEmployeeMonthlyDeduction() {
 
 - [Static and Default Methods in Interfaces in Java](https://www.baeldung.com/java-static-default-methods)
 
-### Quiz
+### Quizzes
 
+- A Java interface can have only a single default method,
+  true or false?
 - You cannot override the default methods of an interface
   in the implementation classes, true or false?
 - If a class implements interface A and interface B, both
   of which has the same default method, what will happen?
 
-## Lab Step 7 - Exception handling
+## Lab Step 7 - Exception handling (20 minutes)
 
-### Concepts that will be exercised
+### Concepts that are exercised
 
 - Throwing an exception
 
@@ -368,10 +389,9 @@ public static final double FEDERAL_MINIMUM_HOURLY_WAGE = 7.0;
 
 - Refactor *HourlyEmployee* class so that, when *hourlyRate*
   is set to a value that is smaller than 
-  *FEDERAL_MINIMUM_HOURLY_WAGE*, *IllegalArgumentException*
-  is thrown
+  *FEDERAL_MINIMUM_HOURLY_WAGE*, throw an *IllegalArgumentException*
 
-- Refactor *HourlyEmployeeTest* test accordingly
+- Add testing code to the *HourlyEmployeeTest* accordingly
 
 ### Optional exercise
 
@@ -384,67 +404,114 @@ public static final double FEDERAL_MINIMUM_HOURLY_WAGE = 7.0;
 ```
 
 - Refactor *HourlyEmployeeTest* test to verify that the
-  exception is thrown with expected message
+  exception is thrown with an expected message
 
-## Lab Step 8 - Custom exception
+## Lab Step 8 - Custom exception (20 minutes)
 
-### Concepts that will be exercised
+### Concepts that are exercised
 
-- Create a custom exception
-
-### Concrete steps
-
-- Create and use *IllegalHourlyWageException* class instead of *IllegalArgumentException*
-
-- (Optional) If monthly salary for *SalariedEmployee* is set with more than 1 million dollars, throw "MorallyWrongWageException"
-
-## Lab Step 9 - Collection classes
-
-### Concepts that will be exercised
-
-- Collection
+- Create and use a custom business level exception
 
 ### Concrete steps
 
-- Refactor *Department* class to use a proper collection object of *Employee* rather than an array
+- Create and use *IllegalHourlyWageException* class 
+  instead of *IllegalArgumentException*
+
+- If monthly salary for *SalariedEmployee* is set with 
+  more than 1 million dollars, throw *TooMuchSalaryException*
+
+- Refactor *HourlyEmployeeTest* and *SalariedEmployeeTest*
+  accordingly
+
+### Quizzes
+
+- What is the difference between Checked exception vs
+  Unchecked exception?
+- What is the root class of the Unchecked exception?
+
+## Lab Step 9 - Collection classes (20 minutes)
+
+### Concepts that are exercised
+
+- List vs Set
+- LinkedList vs ArrayList?
+- List/Set vs Map
+
+### Concrete steps
+
+- Refactor *Department* class to use a proper collection object 
+  of *Employee* rather than an array
 - Remove *currentIndex* field from the *Department* class
 
-- Refactor *IRS* class to use *ArrayList* rather than an array
+- Refactor *IRS* class to use a proper collection object of
+  *TaxPayer* rather than an array
 - Remove *currentIndex* field from the *IRS* class
 
-- Refactor any test code accordingly
+- Refactor any code that need to be refactored accordingly
 
-## Lab Step 10 - Singleton class
+## Lab Step 10 - Singleton (20 minutes)
 
-### Concepts that will be exercised
+### Concepts that are exercised
 
-- Singleton class
+- When do you want to use Singleton?
 
 ### Concrete steps
 
-- Refactor *IRS* class as a singleton class
+- Refactor *IRS* class as a singleton class as following
+  - Make the constructor *private*
+  - Create a static field that refers to the singleton object
+
+```
+    private static IRS instance;
+
+    // Make the constructor private
+    private IRS() {
+    }
+
+    // If singleton instance has not been created yet,
+    // create one.  Otherwise, return the same instance.
+    public static IRS getInstance() {
+        if (instance == null) {
+            instance = new IRS();
+        }
+        return instance;
+    }
+```
+
 - Refactor *IRSTest* accordingly
 
-## Lab Step 11 - Constant class
+### Resources
 
-### Concepts that will be exercises
+- [Singletons in Java](https://www.baeldung.com/java-singleton)
 
-- Constant class
+## Lab Step 11 - Constant class (20 minutes)
+
+### Concepts that are exercised
+
+- Constant classes
 
 ### Concrete steps
 
-- Create *com.hr.personnel.EmployeeConstants* and *gov.irs.YaxConstants* classes
-- Move all constants to these classes
+- Create *com.hr.personnel.EmployeeConstants* class
+- Move all constants used in the same package to these classes
+- Create *gov.irs.TaxConstants* class
+- Move all constants used in the same package to these classes
 
-## Lab Step 12 - Simple JSON
+- Refactor other codes accordingly
+- Run all tests 
 
-### Concepts that will be exercises
+## Lab Step 12 - Simple JSON (30 minutes)
+
+### Concepts that are exercised
 
 - Using JSON utility class to read JSON data from a file
 
 ### Concrete steps
 
-- Add *Simple JSON* dependency to the *pom.xml"
+- Add *Simple JSON* dependency to the *pom.xml* or 
+  Google search "maven simple json"
+- Make sure to refresh "Maven" in IntelliJ so that
+  IntelliJ downloads the *json-simple* dependency
 
 ```
 <dependency>
@@ -454,7 +521,9 @@ public static final double FEDERAL_MINIMUM_HOURLY_WAGE = 7.0;
 </dependency>
 ```
 
-- Create *SimpleJSONUtility* class under *utilities" package with the following code
+- Create *utilities* package
+- Create *SimpleJSONUtility* class under the *utilities* package 
+  with the following code
 
 ```
 package utilities;
@@ -504,102 +573,84 @@ public class SimpleJSONUtility {
 }
 ```
 
-- Modify *HRClient* to read JSON SalariedEmployee data and register 
-  them to the *Department* object.  You can leverage the following code fragment:
+- Create *salariedEmployees.json* file under the project root
+  with the following contents
 
 ```
+[
+  {
+    "employee": {
+      "name": "charles",
+      "hireDate": "2020-01-03",
+      "salary": "20000"
+    }
+  },
+  {
+    "employee": {
+      "name": "kane",
+      "hireDate": "2010-04-03",
+      "salary": "10000"
+    }
+  }
+]
+```
+
+- Modify *HRClient* to read JSON SalariedEmployee data from
+  *salariedEmployees.json* file and then register 
+  them to the *Department* object (instead of creating Employee
+  objects directly inside the *HRClient*).  You can leverage 
+  the following code fragment:
+
+```
+String jsonFilePath = "salariedEmployees.json";
+
 JSONArray salariedEmployeesJSON
-        = SimpleJSONUtility.readSalariedEmployeesJSON(JsonFilePath);
-salariedEmployeesJSON.forEach(employee -> {
-    Employee employeeObject = SimpleJSONUtility.parseEmployeeObject((JSONObject) employee);
-    department.addEmployee(employeeObject);
+        = SimpleJSONUtility.readSalariedEmployeesJSON(jsonFilePath);
+        
+salariedEmployeesJSON.forEach(employeeJSON -> {
+    Employee employee = SimpleJSONUtility.parseEmployeeObject((JSONObject) employeeJSON);
+    department.addEmployee(employee);
 });
 ```
 
-## Lab Step 13 - Composition, Enum
+## Lab Step 13 - Composition, Enum (30 minutes)
 
-### Concepts that will be exercises
+### Concepts that are exercised
 
 - Composition
 - Enum
 
 ### Concrete steps
 
-- Create *CompanyHealth* enum with tge following values
+- Create *CompanyHealth* enum under *com.hr.corp* package
+  with the following values
   - HEALTHY
   - OK
   - SICK
 
-- Create *Auditor* class with *performMonthlyAudit* method as following
+- Create *Auditor* class under the same package with the
+  *computeMonthlyProfit* method as following
 
 ```
-public CompanyHealth performMonthlyAudit(double monthlyProfit, 
-                                        double monthlyFixedCost, 
-                                        double monthlyTaxToPay ) {
-
-    CompanyHealth auditorOpinion = CompanyHealth.OK;
-
-    if (monthlyProfit > monthlyFixedCost + monthlyTaxToPay) {
-        auditorOpinion = CompanyHealth.HEALTHY;
-    } else if (monthlyProfit < monthlyFixedCost + monthlyTaxToPay) {
-        auditorOpinion = CompanyHealth.SICK;
-    }
-
-    return auditorOpinion;
+public double computeMonthlyProfit(double monthlyIncome,
+                                   double monthlyFixedCost,
+                                   double monthlyTaxToPay ) {
+    return monthlyIncome - (monthlyFixedCost + monthlyTaxToPay);
 }
 ```
 
 - Create and run *AuditorTest*
-- Add the following code to *Corpoation* class
+
+- In the *Corporation* class, create a new constructor, through
+  which *Auditor* object gets injected
+- Implement *performMonthlyAudit* method in the *Corporation* 
+  class leveraging code below
 
 ```
 public static final double MONTHLY_FIXED_COST = 10000.0;
+public static final double MINIMUM_PROFIT_TO_MAKE_TO_BE_HEALTHY = 10000.0;
+public static final double MINIMUM_PROFIT_TO_MAKE_TO_BE_OK = 0.0;
 
-public CompanyHealth performMonthlyAudit() {
-    return auditor.performMonthlyAudit(monthlyProfit, MONTHLY_FIXED_COST, computeMonthlyTaxToPay());
-}
-```
-
-- Create *CorpClient* class under *com.hr.corp.client" package
-  - Write code to get company health 
-    
-## Lab Step 14 (Optional) - Unit testing with Mockito
-
-### Concepts that will be exercises
-
-- Unit testing with Mockito
-
-### Concrete steps
-
-- Add Mockito depdendency to *pom.xml*
-
-```
-<dependency>
-    <groupId>org.mockito</groupId>
-    <artifactId>mockito-core</artifactId>
-    <version>4.5.1</version>
-    <scope>test</scope>
-</dependency>
-```
-
-- Refactor *Auditor* Code as following
-
-```
-public class Auditor {
-
-    public double computeMonthlyProfit(double monthlyIncome,
-                                             double monthlyFixedCost,
-                                             double monthlyTaxToPay ) {
-        return monthlyIncome - (monthlyFixedCost + monthlyTaxToPay);
-    }
-}
-```
-
-- Refactor *AuditorTest* accordingly
-
-- Refactor *performMonthlyAudit()* method of *Corporation* as following
-
-```
 public CompanyHealth performMonthlyAudit() {
 
     double monthlyProfit
@@ -618,9 +669,89 @@ public CompanyHealth performMonthlyAudit() {
 }
 ```
 
+- Write *CorporationTest* class testing *performMonthlyAudit* method
+
+## Lab Step 14 (Optional) - DAO (Data Access Object) layer
+
+### Concepts that are exercised
+
+- Right now, the *Department* class is responsible for the
+  following two concerns - violation of Single Responsibility Principle
+  - Business logic
+  - Managing Employee objects
+- We want to separate these two concerns by delegating
+  the 2nd responsibility to *DepartmentDAO* class
+  - We can change how Employee objects get managed later on,
+    for example maintaining them in the database, without
+    affecting the business logic
+
+### Concrete steps to take
+
+- Create *DepartmentDAO* class under the same package where
+  *Department* class is located with the following code 
+
+```
+public class DepartmentDAO {
+
+    private List<Employee> employees = new ArrayList<>();
+
+    public void addEmployee(Employee employee) {
+        employees.add(employee);
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+}
+```
+
+- Refactor *Department* class
+  - In the *Department* class, create a new constructor, 
+    through which the *DepartmentDAO* object gets injected
+  - Use *DepartmentDAO* object for adding an employee
+    or getting all employees
+
+- Refactor and run *DepartmentTest* class accordingly
+
+## Lab Step 15 (Optional) - Unit testing with Mockito
+
+### Concepts that are exercised
+
+- Unit testing with Mockito
+
+### Concrete steps
+
+- Add Mockito dependency to *pom.xml*
+- Make sure to refresh "Maven" in IntelliJ so that
+  IntelliJ downloads the *mockito-core* dependency
+
+```
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>4.5.1</version>
+    <scope>test</scope>
+</dependency>
+```
+
 - Refactor *CorporationTest* as following
 
 ```
+package com.hr.corp;
+
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
+
+import static com.hr.corp.Corporation.MINIMUM_PROFIT_TO_MAKE_TO_BE_HEALTHY;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.ArgumentMatchers.anyDouble;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 @RunWith(MockitoJUnitRunner.class)
 public class CorporationTest {
 
@@ -657,32 +788,7 @@ public class CorporationTest {
     }
 }
 ```
+
 - Run all tests and verify success
 
-## Lab Step 15 (Optional) - DAO (Data Access Object) layer
-
-### Concepts that will be exercises
-
-- DAO (Data Access Object) layer
-
-### Concrete steps to take
-
-- Create *DepartmentDAO* class as following - it is now responsbile for managing Employee data
-
-```
-public class DepartmentDAO {
-
-    private List<Employee> employees = new ArrayList<>();
-
-    public void addEmployee(Employee employee) {
-        employees.add(employee);
-    }
-
-    public List<Employee> getEmployees() {
-        return employees;
-    }
-}
-```
-
-- Refactor other code accordingly
 
