@@ -240,12 +240,12 @@ Java.
 
 - Add *CommissionedEmployee* sub-class with the following fields
   - private double commissionRate
-  - private ArrayList<Double> monthlySales
+  - private ArrayList\<Double\> monthlySales
   
 - Implement *computeMonthlyCompensation()* method for the
   *CommissionedEmployee* as following:
   - The monthly compensation for the *CommissionedEmployee*
-    is total of "commissionRate * <each-sale-amount>"
+    is total of "commissionRate * \<each-sale-amount\>"
   
 - Write testing code for *CommissionedEmployee* class
   testing *computeMonthlyCompensation()* method
