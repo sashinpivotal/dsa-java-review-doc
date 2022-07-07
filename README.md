@@ -39,6 +39,10 @@ of this project.
 
 ## Lab step 1 - Java class and objects and Testing (45 minutes)
 
+In this step, you are going to create a Maven project
+and create *Employee* class with some fields and methods.
+You are also going to create test code.
+
 ### Concepts that are exercised
 
 - Java class and objects
@@ -52,13 +56,15 @@ of this project.
 
 - Create Maven project
   - Take a look at *pom.xml* file
+  - Exercise some Maven commands
   
 - Create *com.hr.personnel* package
 - Create *Employee* class under the *com.hr.personnel* 
   package with the following fields
   - String name
   - LocalDate hireDate
-- Add the following methods to the *Employee* class
+- Add the following methods to the *Employee* class with proper
+  access modifiers
   - *String getEmployeeInfo()* method which returns *String* 
     type of "name = <employee-name>, hireDate = 2020-02-03"
   - *String work()* method that just returns *String*
@@ -67,7 +73,7 @@ of this project.
 - Create *com.hr.personnel.client* sub-package
 - Write *HRClient* class under *com.hr.personnel.client* sub-package 
   - Create two *com.hr.personnel.Employee** objects 
-    and calls *getEmployeeInfo* methods of those objects
+    and call *getEmployeeInfo* method of those objects
   - Display the result in the console
   
 - Add JUnit 4 dependency to the *pom.xm* as following. 
@@ -95,11 +101,11 @@ of this project.
 - Add another method below to the *Employee* class
 
 ```
-    // If current year is 2022 and the year of hireDate is
-    // 2020, it returns 2
-    public int computeNumberOfYearsWorkedSinceHired() {
-        // add code here - do not use deprecated method
-    }
+// If current year is 2022 and the year of hireDate is
+// 2020, it returns 2
+public int computeNumberOfYearsWorkedSinceHired() {
+    // add code here - do not use deprecated method
+}
 ```
 
 - Write test code of the above method
@@ -111,9 +117,13 @@ of this project.
   - default (package-private)
   - protected
   - public
+- Why do you want to make your fields private?
 - What is *@Before* annotation (in JUnit 4) for in your testing code?
 
 ## Lab Step 2 - Inheritance (30 minutes)
+
+In this step, you are going to create sub-classes of
+*Employee* class.
 
 ### Concepts that are exercised
 
@@ -138,7 +148,8 @@ of this project.
 - Refactor *HRClient* class
   - Create two *SalariedEmployee*
     objects and one *HourlyEmployee* objects replacing
-    *Employee* objects
+    *Employee* objects and 
+  - Invoke *getEmployeeInfo* method of these objects
   
 - Create *Department* class under the *com.hr.personnel*
   package with the following fields:
@@ -152,6 +163,10 @@ of this project.
   - int letEmployeesWorkAndReturnNumberOfEmployeesWhoWorked()
 
 - Refactor *HRClient* class to use *Department* class
+  - Add employee objects to the *Department* object
+  - For each employee of the department, invoke *getEmployeeInfo* method
+  - Invoke *letEmployeesWorkAndReturnNumberOfEmployeesWhoWorked()*
+    method of the *Department* object
 
 - Write test code for the *Department* class
   - Test *addEmployee* method
@@ -161,24 +176,32 @@ of this project.
 
 - Can a sub-class access private fields or methods of a parent class?
 - Is the following code going to work?
-  If no, can compiler detect the problem?
+  If no, can compiler detect the problem? (In other words,
+  Is this compile time exception or runtime exception?)
+- Note that *getMonthlySalary()* method is defined in the 
+  *SalaryEmployee* class not *Employee* class
 
 ```
 Employee employee = new SalariedEmployee(..);
 String name = employee.getName();
-double salary = employee.getSalary()
+double salary = employee.getMonthlySalary(); 
 ```
 
 ## Lab Step 3 - Polymorphism (30 minutes)
 
-### Concepts that are exercised
+In this step, you are going to add different behavior
+to sub-classes - sub-classes will override a method
+of a parent class - and observe polymorphic behavior of
+Java.
 
-- Overriding methods 
-  - What is an "overriding method"? When do you want to use it?
+### Concepts that are exercised
 
 - Polymorphism
   - What is it?
   - What is an example of polymorphic behavior in Java?
+
+- Overriding methods
+  - What is an "overriding method"? When do you want to use it?
 
 ### Concrete steps to take
 
@@ -188,36 +211,41 @@ double salary = employee.getSalary()
 
 - Implement *computeMonthlyCompensation()* method 
   in the *SalariedEmployee* class using *monthlySalary* field
+  - The *computeMonthlyCompensation()* method just
+    returns the value of the *monthlySalary* field
 
 - Implement *computeMonthlyCompensation()* method 
   in the *HourlyEmployee* class using *hourlyRate* 
   and *hoursWorkedPerMonth* fields
+  - The *computeMonthlyCompensation()* method return
+    the value of "hourlyRate * hoursWorkedPerMonth"
 
 - Add and implement the following method to the *Department* class.
   It should return total monthly compensation of all employees in
-  that department.
+  that department - it should add and return the total monthly
+  compensation of all employees.
   - double computeDepartmentMonthlyTotalCompensation()
   
-- Write testing code for both *SalariedEmployee* 
-  and *HourlyEmployee* classes testing
-  *computeMonthlyCompensation()* method 
-
 - Add code in the *HRClient* class to display the result of
   calling *computeDepartmentMonthlyTotalCompensation()* method
 
-- Write testing method in the *DepartmentTest* class 
+- Write testing code for both *SalariedEmployee*
+  and *HourlyEmployee* classes testing
+  *computeMonthlyCompensation()* method
+
+- Write testing method for the *Department* class 
   testing *computeDepartmentMonthlyTotalCompensation()* method
 
 ### Optional exercise
 
-- Add *CommissionedEmployee* class with the following fields
+- Add *CommissionedEmployee* sub-class with the following fields
   - private double commissionRate
   - private ArrayList<Double> monthlySales
   
 - Implement *computeMonthlyCompensation()* method for the
-  *CommissionedEmployee*
+  *CommissionedEmployee* as following:
   - The monthly compensation for the *CommissionedEmployee*
-    is total of commissionRate * <each-sale-amount>
+    is total of "commissionRate * <each-sale-amount>"
   
 - Write testing code for *CommissionedEmployee* class
   testing *computeMonthlyCompensation()* method
@@ -227,8 +255,14 @@ double salary = employee.getSalary()
 - Is it mandatory to use *@Override* annotation onto 
   an "overriding method"?
 - If not, why is the usage of it still recommended?
+- What is the difference between "overriding" vs.
+  "overloading" in Java code?
 
 ## Lab Step 4 - Abstract class (20 minutes)
+
+In this step, you are going to convert *Employee* class
+into an abstract class making some methods of the class
+abstract methods.
 
 ### Concepts that are exercised
 
@@ -238,7 +272,7 @@ double salary = employee.getSalary()
 
 ### Concrete steps
 
-- Convert *Employee* class as an abstract class
+- Convert *Employee* class into an abstract class
   - Convert *computeMonthlyCompensation()* into an abstract method
   
 - Refactor other code accordingly
@@ -246,7 +280,7 @@ double salary = employee.getSalary()
 ### Optional exercise
 
 - Convert *getEmployeeInfo()* of the *Employee* class
-  into an abstract method
+  into an abstract method as well
 
 ### Quiz
 
@@ -256,9 +290,13 @@ double salary = employee.getSalary()
 
 ## Lab Step 5 - Interface (45 minutes)
 
+In this step, you are going to create a Java interface
+called *TaxPayer* and make classes to implement it.
+
 ### Concepts that are exercised
 
 - Interface
+  - What is Java interface?
   - When do you want to use Java interface?
 
 ### Concrete steps
@@ -266,7 +304,7 @@ double salary = employee.getSalary()
 - Create *gov.irs* package
 - Create *TaxPayer* interface under *gov.irs* package with 
   the following methods
-  - double computeMonthlyTaxToPay(); // returns amount of tax to pay
+  - double computeMonthlyTaxToPay(); // returns amount of monthly tax to pay
   
 - Add the following constants to the interface - these are tax rates
   - public static final double HOURLY_TAX_RATE = 0.25;
@@ -295,8 +333,9 @@ double salary = employee.getSalary()
   - private TaxPayer[] taxPayers = new TaxPayer[100];
   - private int currentIndex = 0;  // for dealing with the array
 - Add and implement the following methods to the *IRS* class
-  - double computeTotalMonthlyTaxToCollect()
   - void register(TaxPayer taxPayer)
+  - double computeTotalMonthlyTaxToCollect()
+  
 - Write *IRSTest* class testing *computeTotalMonthlyTaxToCollect()* method
 
 ### Optional exercise
@@ -319,13 +358,16 @@ double salary = employee.getSalary()
 
 ## Lab Step 6 - Default method (20 minutes)
 
+In this step, you are going to add a default method to
+the Java interface.
+
 ### Concepts that are exercised
 
 - Default method in a Java interface
 
 ### Concrete steps
 
-- Add the following method to the *TaxPayer* interface
+- Add the following code to the *TaxPayer* interface
 
 ```
 public static final double DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION = 250.0;
@@ -335,18 +377,19 @@ default double computeStandardEmployeeMonthlyDeduction() {
 }
 ```
 
-- Refactor *computeMonthlyTaxToPay* methods of *HourlyEmployee* 
+- Refactor *computeMonthlyTaxToPay* method of *HourlyEmployee* 
   and *SalariedEmployee* classes as following
-  - Apply DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION when
+  - Apply *DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION* when
     computing monthly tax to pay  
   - When the monthly tax to pay is less than or equal to 
-    the DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION, 
+    the *DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION*, 
     return 0.0
   
-- Refactor *HourlyEmployeeTest* and *SalariedEmployeeTest* testing
+- Refactor *HourlyEmployeeTest* and *SalariedEmployeeTest* 
   code accordingly
-  - Make sure you test the case in which the monthly tax to pay 
-    is less than or equal to the DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION
+  - Make sure you test the case in which the monthly tax  
+    to pay is less than or equal to the 
+    *DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION*
   
 - Refactor *IRSTest* testing code accordingly
 
@@ -375,9 +418,14 @@ default double computeStandardEmployeeMonthlyDeduction() {
 
 ## Lab Step 7 - Exception handling (20 minutes)
 
+In this step, you are going to handle abnormal situation,
+in which you are going to throw an exception.
+
 ### Concepts that are exercised
 
 - Throwing an exception
+- Handling an exception
+- Checked exception vs Unchecked exception
 
 ### Concrete steps
   
@@ -408,14 +456,21 @@ public static final double FEDERAL_MINIMUM_HOURLY_WAGE = 7.0;
 
 ## Lab Step 8 - Custom exception (20 minutes)
 
+In the previous step, you used a Java-provided exception
+to handle abnormal situation.  In this step, you
+are going to create a custom exception.
+
 ### Concepts that are exercised
 
-- Create and use a custom business level exception
+- Create and use a custom exception
+  - When do you want to create a custom exception?
 
 ### Concrete steps
 
 - Create and use *IllegalHourlyWageException* class 
-  instead of *IllegalArgumentException*
+  instead of *IllegalArgumentException* when *hourlyRate*
+  is set to a value that is smaller than 
+  *FEDERAL_MINIMUM_HOURLY_WAGE*
 
 - If monthly salary for *SalariedEmployee* is set with 
   more than 1 million dollars, throw *TooMuchSalaryException*
@@ -425,16 +480,19 @@ public static final double FEDERAL_MINIMUM_HOURLY_WAGE = 7.0;
 
 ### Quizzes
 
-- What is the difference between Checked exception vs
-  Unchecked exception?
 - What is the root class of the Unchecked exception?
 
 ## Lab Step 9 - Collection classes (20 minutes)
 
+So far, we used an array for maintaining employee
+objects. In this step, we are going to use proper
+Collection object.
+
 ### Concepts that are exercised
 
+- Array vs Collection
 - List vs Set
-- LinkedList vs ArrayList?
+- LinkedList vs ArrayList
 - List/Set vs Map
 
 ### Concrete steps
@@ -451,15 +509,19 @@ public static final double FEDERAL_MINIMUM_HOURLY_WAGE = 7.0;
 
 ## Lab Step 10 - Singleton (20 minutes)
 
+In this step, you are going to create a singleton object.
+
 ### Concepts that are exercised
 
-- When do you want to use Singleton?
+- What is a single object?
+- When do you want to use singleton object?
 
 ### Concrete steps
 
 - Refactor *IRS* class as a singleton class as following
   - Make the constructor *private*
   - Create a static field that refers to the singleton object
+  - If the singleton object has not been created, create one
 
 ```
     private static IRS instance;
@@ -484,7 +546,15 @@ public static final double FEDERAL_MINIMUM_HOURLY_WAGE = 7.0;
 
 - [Singletons in Java](https://www.baeldung.com/java-singleton)
 
+### Quiz
+
+- What happens when multiple threads access/change the
+  internal state of a singleton object?
+
 ## Lab Step 11 - Constant class (20 minutes)
+
+In this step, you are going to create a class where
+all constants are maintained.
 
 ### Concepts that are exercised
 
@@ -493,23 +563,29 @@ public static final double FEDERAL_MINIMUM_HOURLY_WAGE = 7.0;
 ### Concrete steps
 
 - Create *com.hr.personnel.EmployeeConstants* class
-- Move all constants used in the same package to these classes
+- Move all constants used in the same package to this class
 - Create *gov.irs.TaxConstants* class
-- Move all constants used in the same package to these classes
+- Move all constants used in the same package to this class
 
 - Refactor other codes accordingly
-- Run all tests 
+- Run all tests and make sure they all succeed
 
 ## Lab Step 12 - Simple JSON (30 minutes)
 
+In this step, you are going to use "Simple JSON"
+library and read data from external JSON file
+into Java objects.
+
 ### Concepts that are exercised
 
+- What is JSON?
 - Using JSON utility class to read JSON data from a file
 
 ### Concrete steps
 
-- Add *Simple JSON* dependency to the *pom.xml* or 
-  Google search "maven simple json"
+- Add "Simple JSON" dependency specified below to the *pom.xml* 
+  (In order to find it yourself, you can just Google search 
+   with "maven simple json".)
 - Make sure to refresh "Maven" in IntelliJ so that
   IntelliJ downloads the *json-simple* dependency
 
@@ -615,6 +691,8 @@ salariedEmployeesJSON.forEach(employeeJSON -> {
 
 ## Lab Step 13 - Composition, Enum (30 minutes)
 
+In this step, you are going to add Java Enum class.
+
 ### Concepts that are exercised
 
 - Composition
@@ -673,12 +751,17 @@ public CompanyHealth performMonthlyAudit() {
 
 ## Lab Step 14 (Optional) - DAO (Data Access Object) layer
 
+In this step, you are going to use DAO class through
+which data access logic (or persistence logic) gets
+separated out from business logic.
+
 ### Concepts that are exercised
 
 - Right now, the *Department* class is responsible for the
   following two concerns - violation of Single Responsibility Principle
   - Business logic
   - Managing Employee objects
+  
 - We want to separate these two concerns by delegating
   the 2nd responsibility to *DepartmentDAO* class
   - We can change how Employee objects get managed later on,
@@ -714,6 +797,22 @@ public class DepartmentDAO {
 - Refactor and run *DepartmentTest* class accordingly
 
 ## Lab Step 15 (Optional) - Unit testing with Mockito
+
+It is very common to see a Java class have dependency
+classes - for example, the *Corporation* class 
+has *Auditor* class delegating some task - this is
+an example of composition.
+
+Now you want to write unit testing code for the
+*Corporation* class, you want to test if the
+business logic of *Corporation* class works as
+expected NOT the behavior of its dependency
+classes, in this case the *Auditor* class.
+
+One way to achieve this is to "mock" the behavior
+of the dependencies so that if there is a test
+failure it should be because a wrong behavior
+of the unit-test-target not from the dependency.
 
 ### Concepts that are exercised
 
