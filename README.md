@@ -513,8 +513,9 @@ In this step, you are going to create a singleton object.
 
 ### Concepts that are exercised
 
-- What is a single object?
+- What is a singleton object?
 - When do you want to use singleton object?
+- What are the possible downside of using singleton object?
 
 ### Concrete steps
 
