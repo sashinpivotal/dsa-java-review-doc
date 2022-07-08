@@ -43,6 +43,7 @@ public class Department {
     public double computeDepartmentMonthlyTotalCompensation() {
         double departmentMonthlyTotalCompensation = 0.0;
         for (Employee employee: departmentDAO.getEmployees()) {
+            System.out.println("employee class: " + employee.getClass());
             double monthlyCompensation = employee.computeMonthlyCompensation();
             departmentMonthlyTotalCompensation += monthlyCompensation;
         }
