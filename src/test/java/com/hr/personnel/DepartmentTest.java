@@ -26,7 +26,12 @@ public class DepartmentTest {
 
     @Test
     public void addEmployee_should_add_an_employee_correctly() {
-        assertEquals(2, departmentDAO.getEmployees().size());
+        int numberOfEmployeesBeforeAddingAnotherOne = departmentDAO.getEmployees().size();
+        departmentDAO.addEmployee(new HourlyEmployee("charles",
+                LocalDate.of(2011, 3, 12),
+                300, 20.0));
+        assertEquals(numberOfEmployeesBeforeAddingAnotherOne + 1
+                , departmentDAO.getEmployees().size());
     }
 
     @Test
