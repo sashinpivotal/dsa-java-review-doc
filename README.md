@@ -66,9 +66,9 @@ You are also going to create test code.
 - Add the following methods to the *Employee* class with proper
   access modifiers
   - *String getEmployeeInfo()* method which returns *String* 
-    type of "name = <employee-name>, hireDate = 2020-02-03"
+    type of "name = \<employee-name\>, hireDate = 2020-02-03"
   - *String work()* method that just returns *String*
-    type of "<employee-name> worked"
+    type of "\<employee-name\> worked"
 
 - Create *com.hr.personnel.client* sub-package
 - Write *HRClient* class under *com.hr.personnel.client* sub-package 
@@ -276,11 +276,18 @@ abstract methods.
   - Convert *computeMonthlyCompensation()* into an abstract method
   
 - Refactor other code accordingly
-
-### Optional exercise
+  - You don't need *EmployeeTest* anymore
 
 - Convert *getEmployeeInfo()* of the *Employee* class
   into an abstract method as well
+  -  *getEmployeeInfo()* method of the *HourlyEmployee* should
+     return *hoursWorkedPerMonth* and *hourlyRate* along with
+     *name* and *hireDate*
+  -  *getEmployeeInfo()* method of the *Salaried* should
+     return *monthlySalary* along with
+     *name* and *hireDate*
+
+- Write test methods of  *getEmployeeInfo()* method
 
 ### Quiz
 
