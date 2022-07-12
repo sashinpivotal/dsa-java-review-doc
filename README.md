@@ -346,6 +346,8 @@ called *TaxPayer* and make classes to implement it.
   - double computeTotalMonthlyTaxToCollect()
   
 - Write *IRSTest* class testing *computeTotalMonthlyTaxToCollect()* method
+  - Make sure the IRS object to test has 1 SalariedEmployee,
+    1 HourlyEmployee, and 1 Corporation as TaxPayer objects
 
 ### Optional exercise
 
