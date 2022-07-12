@@ -91,6 +91,8 @@ You are also going to create test code.
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+</project>
 ```
 
 - Write Unit testing code of *com.hr.personnel.Employee* class
@@ -363,6 +365,11 @@ called *TaxPayer* and make classes to implement it.
 - A class can implement multiple Java interfaces, true or false?
 - An abstract class cannot implement Java interfaces, true or false?
 
+### Resources on Java Interface
+
+- [Java Interface presentation](https://github.com/sashinpivotal/java-presentations/blob/main/javase_interface.pdf)
+  
+
 ## Lab Step 6 - Default method (20 minutes)
 
 In this step, you are going to add a default method to
@@ -485,9 +492,15 @@ are going to create a custom exception.
 - Refactor *HourlyEmployeeTest* and *SalariedEmployeeTest*
   accordingly
 
+
+### Resources
+
+- [Java Exception presentation](https://github.com/sashinpivotal/java-presentations/blob/main/javase_exceptions.pdf)
+
 ### Quizzes
 
 - What is the root class of the Unchecked exception?
+
 
 ## Lab Step 9 - Collection classes (20 minutes)
 
@@ -499,7 +512,7 @@ Collection object.
 
 - Array vs Collection
 - List vs Set
-- LinkedList vs ArrayList
+- ArrayList vs. LinkedList
 - List/Set vs Map
 
 ### Concrete steps
@@ -513,6 +526,11 @@ Collection object.
 - Remove *currentIndex* field from the *IRS* class
 
 - Refactor any code that need to be refactored accordingly
+
+### Resources
+
+- [Java Collection presentation](https://github.com/sashinpivotal/java-presentations/blob/main/javase_collections.pdf)
+
 
 ## Lab Step 10 - Singleton (20 minutes)
 
