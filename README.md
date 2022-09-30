@@ -142,28 +142,15 @@ public int computeNumberOfYearsWorkedSinceHired() {
     methods to the *SalariedEmployee* class
     - double monthlySalary;
   
-  - Add "getEmployeeInfo(..)" method to the 
-    *SalariedEmployee* class overriding "getEmployeeInfo(..)" 
-    method of the parent class
-    - It should return something like 
-      "name = Mike, hireDate = 2020-02-03, monthlySalary = 2000.0"
-    
   - Add the following fields and appropriate accessor 
     methods to the *HourlyEmployee* class
     - int hoursWorkedPerMonth;
     - double hourlyRate;
 
-  - Add "getEmployeeInfo(..)" method to the 
-    *HourlyEmployee* class overriding "getEmployeeInfo(..)" 
-    method of the parent class
-    - It should return something like 
-      "name = Mike, hireDate = 2020-02-03, monthlyIncome = 2000.0"
-
 - Refactor *HRClient* class
   - Create one *SalariedEmployee*
     object and one *HourlyEmployee* object replacing
     *Employee* objects and 
-  - Invoke *getEmployeeInfo* method of these objects
   
 - Create *Department* class under the *com.hr.personnel*
   package with the following fields:
