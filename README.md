@@ -165,7 +165,6 @@ public int computeNumberOfYearsWorkedSinceHired() {
 
 - Refactor *HRClient* class to use *Department* class
   - Add employee objects to the *Department* object
-  - For each employee of the department, invoke *getEmployeeInfo* method
   - Invoke *letEmployeesWorkAndReturnNumberOfEmployeesWhoWorked()*
     method of the *Department* object
 
