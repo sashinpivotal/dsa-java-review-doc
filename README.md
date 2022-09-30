@@ -7,7 +7,7 @@ essential Java concepts and features for the DS&A students.
 
 - **Java classes and Java objects**
 - **Encapsulation**
-- **Inheritance**
+- **Composition and Inheritance**
 - **Polymorphism**
 - **Java abstraction class**
 - **Java interfaces**
@@ -16,7 +16,6 @@ essential Java concepts and features for the DS&A students.
 - Singleton
 - Constants class
 - JSON utility (Simple JSON)
-- Composition
 - Enum
 
 ## Advanced Java concepts
@@ -39,15 +38,13 @@ In this step, you are going to do the following:
 
 - Create a new Java Maven project
 - Create *Employee* class with some fields and methods
-- Write client code that uses *Employee* class
+- Write client code that creates and accesses objects of *Employee* class
 - Write test code testing *Employee* class
 
-### Concepts that are exercised
+### Concepts that are exercised 
 
-- Java class and objects
-  - Why "Object Oriented Programming (OOP)"?
-  - What is "abstraction"?
-  - What is "encapsulation"?
+- Java class and objects (slides #35-#42 of Java Part1 presentation)
+- What is and why "Object Oriented Programming (OOP)"? 
   
 - Unit Testing
   - What is Unit testing for?
@@ -122,20 +119,22 @@ public int computeNumberOfYearsWorkedSinceHired() {
 - Why do you want to make your fields private?
 - What is *@Before* annotation (in JUnit 4) for in your testing code?
 
-## Lab Step 2 - Inheritance (30 minutes)
+## Lab Step 2 - Composition and Inheritance (30 minutes)
 
 In this step, you are going to do the following:
 
 - Write sub-classes of *Employee* class
-- Write *Department* class that contains *Employee* array
+- Write *Department* class that contains an array of *Employee* objects
 
 ### Concepts that are exercised
 
-- Inheritance
+- Composition (slides #220-#228)
+
+- Inheritance (slides #230-#239)
   - When do you want to use inheritance?
   - What could be example sub-classes of *Employee* class?
-
-- Java array
+  
+- Java array (slide #179-#186)
   - What is the pros and cons of using Java array for storing data?
 
 ### Concrete steps to take
@@ -194,7 +193,7 @@ String name = employee.getName();
 double salary = employee.getMonthlySalary(); 
 ```
 
-## Lab Step 3 - Polymorphism (30 minutes)
+## Lab Step 3 - Overloading and Polymorphism (30 minutes)
 
 In this step, you are going to do the following:
 
@@ -204,12 +203,7 @@ In this step, you are going to do the following:
 
 ### Concepts that are exercised
 
-- Polymorphism
-  - What is it?
-  - What is an example of polymorphic behavior in Java?
-
-- Overriding methods
-  - What is an "overriding method"? When do you want to use it?
+- Overriding methods and Polymorphism (slides #244-251)
 
 ### Concrete steps to take
 
@@ -275,9 +269,7 @@ In this step, you are going to do the following:
 
 ### Concepts that are exercised
 
-- Abstract class
-  - What is an abstract class?
-  - When do you want to use it?
+- Abstract class (slides #253-#256)
 
 ### Concrete steps to take
 
@@ -312,10 +304,8 @@ In this step, you are going to do the following:
 
 ### Concepts that are exercised
 
-- Interface
-  - What is Java interface?
-  - When do you want to use Java interface?
-
+- Interface Basics (slide #262-#269)
+  
 ### Concrete steps to take
 
 - Create *gov.irs* package
@@ -387,7 +377,7 @@ the Java interface.
 
 ### Concepts that are exercised
 
-- Default method in a Java interface
+- Default method in a Java interface (slides #273-#278)
 
 ### Concrete steps to take
 
@@ -447,9 +437,7 @@ in which you are going to throw an exception.
 
 ### Concepts that are exercised
 
-- Throwing an exception
-- Handling an exception
-- Checked exception vs Unchecked exception
+- Exceptions (#282-#309)
 
 ### Concrete steps to take
   
@@ -520,10 +508,7 @@ Collection object.
 
 ### Concepts that are exercised
 
-- Array vs Collection
-- List vs Set
-- ArrayList vs. LinkedList
-- List/Set vs Map
+- Collections (slides #310-#374)
 
 ### Concrete steps to take
 
