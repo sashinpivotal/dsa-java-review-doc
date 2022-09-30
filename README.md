@@ -74,7 +74,7 @@ along with this README.md file.
   - For creating "LocalDate" object, you can use "LocalDate.of(YYYY, MM, DD)"
   - Display the result in the console
   
-- Add JUnit 4 dependency to the *pom.xm* as as shown below:
+- Add JUnit 4 dependency to the *pom.xml* as as shown below:
   Make sure to refresh Maven (click the Maven refresh icon
   in the top-right corner of the editor window of IntelliJ)
   so that IntelliJ download and install the *junit* dependency
