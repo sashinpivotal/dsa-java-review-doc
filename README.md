@@ -189,21 +189,26 @@ double salary = employee.getMonthlySalary();
 
 ## Lab Step 3 - Overloading and Polymorphism (30 minutes)
 
-In this step, you are going to do the following:
-
-- Add different behavior to sub-classes, in other words, 
-  the sub-classes will override a method of a parent class 
-- Observe polymorphic behavior of Java
-
 ### Concepts that are exercised
 
 - Overriding methods and Polymorphism (slides #244-251 of Java Part1 presentation)
 
+### High-level steps to take
+
+- Add different behavior to sub-classes, in other words, 
+  the sub-classes override methods of a parent class 
+- Observe polymorphic behavior of Java
+  
 ### Concrete steps to take
 
 - Add the following method to the *Employee* class with 
   proper access modifier 
-  - double computeMonthlyCompensation() { return 0.0; };
+
+```java
+    public double computeMonthlyCompensation() {
+        return 0.0;
+    }
+```
 
 - Implement *computeMonthlyCompensation()* method 
   in the *SalariedEmployee* class using *monthlySalary* field
@@ -216,21 +221,28 @@ In this step, you are going to do the following:
   - The *computeMonthlyCompensation()* method return
     the value of "hourlyRate * hoursWorkedPerMonth"
 
-- Add and implement the following method to the *Department* class.
-  It should return total monthly compensation of all employees in
-  that department - it should add and return the total monthly
-  compensation of all employees.
-  - double computeDepartmentMonthlyTotalCompensation()
+- Add and implement the following method to the *Department* class
+
+```java
+    // Compute total monthly compensation of all 
+    // employees in that department
+    public double computeDepartmentMonthlyTotalCompensation() {
+        // add code here
+        return 0.0;
+    }
+```
   
 - Add code in the *HRClient* class to display the result of
   calling *computeDepartmentMonthlyTotalCompensation()* method
+  - Refactor *HRClient* class to create *SalariedEmployee* and *HourlyEmployee* objects with *monthlySalary* and *hourlyRate*/*hoursWorkedPerMonth* as constructor arguments respectively
+  - Or you can use setter methods to set the values of these fields
 
-- Write testing code for both *SalariedEmployee*
-  and *HourlyEmployee* classes testing
-  *computeMonthlyCompensation()* method
+- Write testing code testing
+  *computeMonthlyCompensation()* method for both *SalariedEmployee*
+  and *HourlyEmployee* classes 
 
-- Write testing method for the *Department* class 
-  testing *computeDepartmentMonthlyTotalCompensation()* method
+- Write testing code testing
+  *computeDepartmentMonthlyTotalCompensation()* method
 
 ### Optional exercise (do this only if you have extra time)
 
