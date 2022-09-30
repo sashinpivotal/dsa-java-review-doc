@@ -5,12 +5,12 @@ essential Java concepts and features for the DS&A students.
 
 ## Essential Java concepts covered 
 
-- Java classes and Java objects
-- Encapsulation
-- Inheritance
-- Polymorphism
-- Java abstraction class
-- Java interfaces
+- **Java classes and Java objects**
+- **Encapsulation**
+- **Inheritance**
+- **Polymorphism**
+- **Java abstraction class**
+- **Java interfaces**
 - Collection classes
 - Unit Testing
 - Singleton
@@ -39,9 +39,12 @@ of this project.
 
 ## Lab step 1 - Java class and objects and Testing (45 minutes)
 
-In this step, you are going to create a Maven project
-and create *Employee* class with some fields and methods.
-You are also going to create test code.
+In this step, you are going to do the following:
+
+- Create a new Java Maven project
+- Create *Employee* class with some fields and methods
+- Write client code that uses *Employee* class
+- Write test code testing *Employee* class
 
 ### Concepts that are exercised
 
@@ -61,8 +64,8 @@ You are also going to create test code.
 - Create *com.hr.personnel* package
 - Create *Employee* class under the *com.hr.personnel* 
   package with the following fields
-  - String name
-  - LocalDate hireDate
+  - *String name*
+  - *LocalDate hireDate*
 - Add the following methods to the *Employee* class with proper
   access modifiers
   - *String getEmployeeInfo()* method which returns *String* 
@@ -76,7 +79,7 @@ You are also going to create test code.
     and call *getEmployeeInfo* method of those objects
   - Display the result in the console
   
-- Add JUnit 4 dependency to the *pom.xm* as following. 
+- Add JUnit 4 dependency to the *pom.xm* as as shown below:
   Make sure to refresh Maven (click the Maven refresh icon
   in the top-right corner of the editor window of IntelliJ)
   so that IntelliJ download and install the *junit* dependency
@@ -98,11 +101,11 @@ You are also going to create test code.
 - Write Unit testing code of *com.hr.personnel.Employee* class
   - Verify that *getEmployeeInfo* and *work* methods work as expected
 
-### Optional exercise 
+### Optional exercise (do this only if you have extra time)
 
 - Add another method below to the *Employee* class
 
-```
+```java
 // If current year is 2022 and the year of hireDate is
 // 2020, it returns 2
 public int computeNumberOfYearsWorkedSinceHired() {
@@ -124,14 +127,19 @@ public int computeNumberOfYearsWorkedSinceHired() {
 
 ## Lab Step 2 - Inheritance (30 minutes)
 
-In this step, you are going to create sub-classes of
-*Employee* class.
+In this step, you are going to do the following:
+
+- Write sub-classes of *Employee* class
+- Write *Department* class that contains *Employee* array
 
 ### Concepts that are exercised
 
 - Inheritance
   - When do you want to use inheritance?
   - What could be example sub-classes of *Employee* class?
+
+- Java array
+  - What is the pros and cons of using Java array for storing data?
 
 ### Steps to take
 
@@ -149,7 +157,7 @@ In this step, you are going to create sub-classes of
 
 - Refactor *HRClient* class
   - Create two *SalariedEmployee*
-    objects and one *HourlyEmployee* objects replacing
+    objects and one *HourlyEmployee* object replacing
     *Employee* objects and 
   - Invoke *getEmployeeInfo* method of these objects
   
@@ -183,7 +191,7 @@ In this step, you are going to create sub-classes of
 - Note that *getMonthlySalary()* method is defined in the 
   *SalaryEmployee* class not *Employee* class
 
-```
+```java
 Employee employee = new SalariedEmployee(..);
 String name = employee.getName();
 double salary = employee.getMonthlySalary(); 
@@ -385,7 +393,7 @@ the Java interface.
 
 - Add the following code to the *TaxPayer* interface
 
-```
+```java
 public static final double DEFAULT_STANDARD_EMPLOYEE_MONTHLY_DEDUCTION = 250.0;
 
 default double computeStandardEmployeeMonthlyDeduction() {
@@ -413,7 +421,7 @@ default double computeStandardEmployeeMonthlyDeduction() {
 
 - Add another default method to the *TaxPayer* interface
 
-```text
+```java
     default String getCurrentDayAndTime() {
         // return String in the format of "yyyy/MM/dd HH:mm:ss"
     }
@@ -447,7 +455,7 @@ in which you are going to throw an exception.
   
 - Add the following to the *HourlyEmployee* class
 
-```
+```java
 public static final double FEDERAL_MINIMUM_HOURLY_WAGE = 7.0;
 ```
 
@@ -462,7 +470,7 @@ public static final double FEDERAL_MINIMUM_HOURLY_WAGE = 7.0;
 - When throwing *IllegalArgumentException*, use the following
   message
 
-```
+```java
 "Illegal wage: " + hourlyRate + "." +
 " Federal minimum wage is " + FEDERAL_MINIMUM_HOURLY_WAGE + "."
 ```
@@ -551,7 +559,7 @@ In this step, you are going to create a singleton object.
   - Create a static field that refers to the singleton object
   - If the singleton object has not been created, create one
 
-```
+```java
     private static IRS instance;
 
     // Make the constructor private
@@ -617,7 +625,7 @@ into Java objects.
 - Make sure to refresh "Maven" in IntelliJ so that
   IntelliJ downloads the *json-simple* dependency
 
-```
+```xml
 <dependency>
     <groupId>com.googlecode.json-simple</groupId>
     <artifactId>json-simple</artifactId>
@@ -629,7 +637,7 @@ into Java objects.
 - Create *SimpleJSONUtility* class under the *utilities* package 
   with the following code
 
-```
+```java
 package utilities;
 
 import com.hr.personnel.Employee;
@@ -680,7 +688,7 @@ public class SimpleJSONUtility {
 - Create *salariedEmployees.json* file under the project root
   with the following contents
 
-```
+```json
 [
   {
     "employee": {
@@ -705,7 +713,7 @@ public class SimpleJSONUtility {
   objects directly inside the *HRClient*).  You can leverage 
   the following code fragment:
 
-```
+```java
 String jsonFilePath = "salariedEmployees.json";
 
 JSONArray salariedEmployeesJSON
@@ -737,7 +745,7 @@ In this step, you are going to add Java Enum class.
 - Create *Auditor* class under the same package with the
   *computeMonthlyProfit* method as following
 
-```
+```java
 public double computeMonthlyProfit(double monthlyIncome,
                                    double monthlyFixedCost,
                                    double monthlyTaxToPay ) {
@@ -752,7 +760,7 @@ public double computeMonthlyProfit(double monthlyIncome,
 - Implement *performMonthlyAudit* method in the *Corporation* 
   class leveraging code below
 
-```
+```java
 public static final double MONTHLY_FIXED_COST = 10000.0;
 public static final double MINIMUM_PROFIT_TO_MAKE_TO_BE_HEALTHY = 10000.0;
 public static final double MINIMUM_PROFIT_TO_MAKE_TO_BE_OK = 0.0;
@@ -801,7 +809,7 @@ separated out from business logic.
 - Create *DepartmentDAO* class under the same package where
   *Department* class is located with the following code 
 
-```
+```java
 public class DepartmentDAO {
 
     private List<Employee> employees = new ArrayList<>();
@@ -852,7 +860,7 @@ of the unit-test-target not from the dependency.
 - Make sure to refresh "Maven" in IntelliJ so that
   IntelliJ downloads the *mockito-core* dependency
 
-```
+```xml
 <dependency>
     <groupId>org.mockito</groupId>
     <artifactId>mockito-core</artifactId>
@@ -863,7 +871,7 @@ of the unit-test-target not from the dependency.
 
 - Refactor *CorporationTest* as following
 
-```
+```java
 package com.hr.corp;
 
 import org.junit.Assert;
