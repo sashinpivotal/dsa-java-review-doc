@@ -62,9 +62,9 @@ along with this README.md file.
 - Add the following methods to the *Employee* class with proper
   access modifiers
   - *String getEmployeeInfo()* method which returns *String* 
-    type of "name = \<employee-name\>, hireDate = 2020-02-03"
+    type of something like "name = Mike, hireDate = 2020-02-03"
   - *String work()* method that just returns *String*
-    type of "\<employee-name\> worked"
+    type of something like "Mike worked"
 
 - Create *com.hr.personnel.client* sub-package
 - Write *HRClient* class under *com.hr.personnel.client* sub-package 
@@ -145,6 +145,8 @@ public int computeNumberOfYearsWorkedSinceHired() {
   - Add "getEmployeeInfo(..)" method to the 
     *SalariedEmployee* class overriding "getEmployeeInfo(..)" 
     method of the parent class
+    - It should return something like 
+      "name = Mike, hireDate = 2020-02-03, monthlySalary = 2000.0"
     
   - Add the following fields and appropriate accessor 
     methods to the *HourlyEmployee* class
@@ -154,10 +156,12 @@ public int computeNumberOfYearsWorkedSinceHired() {
   - Add "getEmployeeInfo(..)" method to the 
     *HourlyEmployee* class overriding "getEmployeeInfo(..)" 
     method of the parent class
+    - It should return something like 
+      "name = Mike, hireDate = 2020-02-03, monthlyIncome = 2000.0"
 
 - Refactor *HRClient* class
-  - Create two *SalariedEmployee*
-    objects and one *HourlyEmployee* object replacing
+  - Create one *SalariedEmployee*
+    object and one *HourlyEmployee* object replacing
     *Employee* objects and 
   - Invoke *getEmployeeInfo* method of these objects
   
@@ -165,7 +169,7 @@ public int computeNumberOfYearsWorkedSinceHired() {
   package with the following fields:
   - String name
   - String location
-  - com.hr.personnel.Employee[] employees array with size of 100 
+  - com.hr.personnel.Employee[] employees // array with size of 100 
   - int currentIndex
   
 - Add the following methods to the *Department* class
