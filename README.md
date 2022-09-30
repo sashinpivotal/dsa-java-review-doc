@@ -148,9 +148,9 @@ public int computeNumberOfYearsWorkedSinceHired() {
     - double hourlyRate;
 
 - Refactor *HRClient* class
-  - Create one *SalariedEmployee*
-    object and one *HourlyEmployee* object replacing
-    *Employee* objects and 
+  - Create two *SalariedEmployee*
+    objects and one *HourlyEmployee* object replacing
+    *Employee* objects 
   
 - Create *Department* class under the *com.hr.personnel*
   package with the following fields:
