@@ -11,8 +11,8 @@ essential Java concepts and features for the DS&A students.
 - **Polymorphism**
 - **Java abstraction class**
 - **Java interfaces**
-- Collection classes
-- Unit Testing
+- **Collection classes**
+- **Unit Testing**
 - Singleton
 - Constants class
 - JSON utility (Simple JSON)
@@ -34,20 +34,17 @@ along with this README.md file.
 
 ## Lab step 1 - Java class and objects and Testing (45 minutes)
 
-In this step, you are going to do the following:
+### Concepts that are exercised 
+
+- Java class and objects and OOP (slides #35-#42 of Java Part1 presentation)
+- Unit Testing (slides#180-#203 of Java Part2 presentation)
+
+### High-level steps to take
 
 - Create a new Java Maven project
 - Create *Employee* class with some fields and methods
 - Write client code that creates and accesses objects of *Employee* class
 - Write test code testing *Employee* class
-
-### Concepts that are exercised 
-
-- Java class and objects (slides #35-#42 of Java Part1 presentation)
-- What is and why "Object Oriented Programming (OOP)"? 
-  
-- Unit Testing
-  - What is Unit testing for?
 
 ### Concrete steps to take
 
@@ -121,21 +118,16 @@ public int computeNumberOfYearsWorkedSinceHired() {
 
 ## Lab Step 2 - Composition and Inheritance (30 minutes)
 
-In this step, you are going to do the following:
-
-- Write sub-classes of *Employee* class
-- Write *Department* class that contains an array of *Employee* objects
-
 ### Concepts that are exercised
 
 - Composition (slides #220-#228)
-
 - Inheritance (slides #230-#239)
-  - When do you want to use inheritance?
-  - What could be example sub-classes of *Employee* class?
-  
 - Java array (slide #179-#186)
-  - What is the pros and cons of using Java array for storing data?
+
+### High-level steps to take
+
+- Write sub-classes of *Employee* class
+- Write *Department* class that contains an array of *Employee* objects
 
 ### Concrete steps to take
 
@@ -262,14 +254,14 @@ In this step, you are going to do the following:
 
 ## Lab Step 4 - Abstract class (20 minutes)
 
-In this step, you are going to do the following:
-
-- Convert *Employee* class into an abstract class 
-  making some methods of the class abstract methods.
-
 ### Concepts that are exercised
 
 - Abstract class (slides #253-#256)
+
+### High-level steps to take
+
+- Convert *Employee* class into an abstract class 
+- Let subclasses override the abstract methods
 
 ### Concrete steps to take
 
@@ -298,13 +290,14 @@ In this step, you are going to do the following:
 
 ## Lab Step 5 - Interface (45 minutes)
 
-In this step, you are going to do the following:
-  - Create a Java interface called *TaxPayer*
-  - Write classes that implement *TaxPayer* interface
-
 ### Concepts that are exercised
 
 - Interface Basics (slide #262-#269)
+
+### High-level steps to take
+
+- Create a Java interface called *TaxPayer*
+- Write classes that implement *TaxPayer* interface
   
 ### Concrete steps to take
 
@@ -372,9 +365,6 @@ In this step, you are going to do the following:
 
 ## Lab Step 6 - Default method (20 minutes)
 
-In this step, you are going to add a default method to
-the Java interface.
-
 ### Concepts that are exercised
 
 - Default method in a Java interface (slides #273-#278)
@@ -432,9 +422,6 @@ default double computeStandardEmployeeMonthlyDeduction() {
 
 ## Lab Step 7 - Exception handling (20 minutes)
 
-In this step, you are going to handle abnormal situation,
-in which you are going to throw an exception.
-
 ### Concepts that are exercised
 
 - Exceptions (#282-#309)
@@ -474,8 +461,7 @@ are going to create a custom exception.
 
 ### Concepts that are exercised
 
-- Create and use a custom exception
-  - When do you want to create a custom exception?
+- Custom exception
 
 ### Concrete steps to take
 
