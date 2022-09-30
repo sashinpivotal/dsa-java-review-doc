@@ -141,11 +141,19 @@ public int computeNumberOfYearsWorkedSinceHired() {
   - Add the following fields and appropriate accessor 
     methods to the *SalariedEmployee* class
     - double monthlySalary;
+  
+  - Add "getEmployeeInfo(..)" method to the 
+    *SalariedEmployee* class overriding "getEmployeeInfo(..)" 
+    method of the parent class
     
   - Add the following fields and appropriate accessor 
     methods to the *HourlyEmployee* class
     - int hoursWorkedPerMonth;
     - double hourlyRate;
+
+  - Add "getEmployeeInfo(..)" method to the 
+    *HourlyEmployee* class overriding "getEmployeeInfo(..)" 
+    method of the parent class
 
 - Refactor *HRClient* class
   - Create two *SalariedEmployee*
