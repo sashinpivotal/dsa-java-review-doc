@@ -170,10 +170,10 @@ public int computeNumberOfYearsWorkedSinceHired() {
   - String name
   - String location
   - com.hr.personnel.Employee[] employees // array with size of 100 
-  - int currentIndex
+  - int currentIndex // set to 0 for now
   
-- Add the following methods to the *Department* class
-  - void addEmployee(com.hr.personnel.Employee employee)
+- Add and implement the following methods to the *Department* class
+  - void addEmployee(Employee employee)
   - int letEmployeesWorkAndReturnNumberOfEmployeesWhoWorked()
 
 - Refactor *HRClient* class to use *Department* class
