@@ -45,14 +45,14 @@ In this step, you are going to do the following:
 ### Concepts that are exercised
 
 - Java class and objects
-  - Why Object-Oriented_Programming (OOP)?
+  - Why "Object Oriented Programming (OOP)"?
   - What is "abstraction"?
   - What is "encapsulation"?
   
 - Unit Testing
   - What is Unit testing for?
 
-### Steps to take
+### Concrete steps to take
 
 - Create Maven project
   - Take a look at *pom.xml* file
@@ -138,7 +138,7 @@ In this step, you are going to do the following:
 - Java array
   - What is the pros and cons of using Java array for storing data?
 
-### Steps to take
+### Concrete steps to take
 
 - Create *SalariedEmployee* and *HourlyEmployee* classes 
   extending *com.hr.personnel.Employee* class
@@ -279,7 +279,7 @@ In this step, you are going to do the following:
   - What is an abstract class?
   - When do you want to use it?
 
-### Concrete steps
+### Concrete steps to take
 
 - Convert *Employee* class into an abstract class
   - Convert *computeMonthlyCompensation()* into an abstract method
@@ -316,7 +316,7 @@ In this step, you are going to do the following:
   - What is Java interface?
   - When do you want to use Java interface?
 
-### Concrete steps
+### Concrete steps to take
 
 - Create *gov.irs* package
 - Create *TaxPayer* interface under *gov.irs* package with 
@@ -389,7 +389,7 @@ the Java interface.
 
 - Default method in a Java interface
 
-### Concrete steps
+### Concrete steps to take
 
 - Add the following code to the *TaxPayer* interface
 
@@ -451,7 +451,7 @@ in which you are going to throw an exception.
 - Handling an exception
 - Checked exception vs Unchecked exception
 
-### Concrete steps
+### Concrete steps to take
   
 - Add the following to the *HourlyEmployee* class
 
@@ -489,7 +489,7 @@ are going to create a custom exception.
 - Create and use a custom exception
   - When do you want to create a custom exception?
 
-### Concrete steps
+### Concrete steps to take
 
 - Create and use *IllegalHourlyWageException* class 
   instead of *IllegalArgumentException* when *hourlyRate*
@@ -525,7 +525,7 @@ Collection object.
 - ArrayList vs. LinkedList
 - List/Set vs Map
 
-### Concrete steps
+### Concrete steps to take
 
 - Refactor *Department* class to use a proper collection object 
   of *Employee* rather than an array
@@ -552,7 +552,7 @@ In this step, you are going to create a singleton object.
 - When do you want to use singleton object?
 - What are the possible downside of using singleton object?
 
-### Concrete steps
+### Concrete steps to take
 
 - Refactor *IRS* class as a singleton class as following
   - Make the constructor *private*
@@ -596,7 +596,7 @@ all constants are maintained.
 
 - Constant classes
 
-### Concrete steps
+### Concrete steps to take
 
 - Create *com.hr.personnel.EmployeeConstants* class
 - Move all constants used in the same package to this class
@@ -617,7 +617,7 @@ into Java objects.
 - What is JSON?
 - Using JSON utility class to read JSON data from a file
 
-### Concrete steps
+### Concrete steps to take
 
 - Add "Simple JSON" dependency specified below to the *pom.xml* 
   (In order to find it yourself, you can just Google search 
@@ -734,7 +734,7 @@ In this step, you are going to add Java Enum class.
 - Composition
 - Enum
 
-### Concrete steps
+### Concrete steps to take
 
 - Create *CompanyHealth* enum under *com.hr.corp* package
   with the following values
@@ -854,7 +854,7 @@ of the unit-test-target not from the dependency.
 
 - Unit testing with Mockito
 
-### Concrete steps
+### Concrete steps to take
 
 - Add Mockito dependency to *pom.xml*
 - Make sure to refresh "Maven" in IntelliJ so that
