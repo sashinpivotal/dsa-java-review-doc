@@ -33,10 +33,6 @@ essential Java concepts and features for the DS&A students.
 The project contains the final solution code
 along with this README.md file.
 
-The same codebase is also available from 
-[GitHub repo](https://github.com/sashinpivotal/dsa-java-review)
-of this project.
-
 ## Lab step 1 - Java class and objects and Testing (45 minutes)
 
 In this step, you are going to do the following:
@@ -52,6 +48,7 @@ In this step, you are going to do the following:
   - Why Object-Oriented_Programming (OOP)?
   - What is "abstraction"?
   - What is "encapsulation"?
+  
 - Unit Testing
   - What is Unit testing for?
 
@@ -189,7 +186,7 @@ In this step, you are going to do the following:
   If no, can compiler detect the problem? (In other words,
   Is this compile time exception or runtime exception?)
 - Note that *getMonthlySalary()* method is defined in the 
-  *SalaryEmployee* class not *Employee* class
+  *SalaryEmployee* class not in the *Employee* class
 
 ```java
 Employee employee = new SalariedEmployee(..);
@@ -199,10 +196,11 @@ double salary = employee.getMonthlySalary();
 
 ## Lab Step 3 - Polymorphism (30 minutes)
 
-In this step, you are going to add different behavior
-to sub-classes - sub-classes will override a method
-of a parent class - and observe polymorphic behavior of
-Java.
+In this step, you are going to do the following:
+
+- Add different behavior to sub-classes, in other words, 
+  the sub-classes will override a method of a parent class 
+- Observe polymorphic behavior of Java
 
 ### Concepts that are exercised
 
@@ -246,7 +244,7 @@ Java.
 - Write testing method for the *Department* class 
   testing *computeDepartmentMonthlyTotalCompensation()* method
 
-### Optional exercise
+### Optional exercise (do this only if you have extra time)
 
 - Add *CommissionedEmployee* sub-class with the following fields
   - private double commissionRate
@@ -270,9 +268,10 @@ Java.
 
 ## Lab Step 4 - Abstract class (20 minutes)
 
-In this step, you are going to convert *Employee* class
-into an abstract class making some methods of the class
-abstract methods.
+In this step, you are going to do the following:
+
+- Convert *Employee* class into an abstract class 
+  making some methods of the class abstract methods.
 
 ### Concepts that are exercised
 
@@ -307,8 +306,9 @@ abstract methods.
 
 ## Lab Step 5 - Interface (45 minutes)
 
-In this step, you are going to create a Java interface
-called *TaxPayer* and make classes to implement it.
+In this step, you are going to do the following:
+  - Create a Java interface called *TaxPayer*
+  - Write classes that implement *TaxPayer* interface
 
 ### Concepts that are exercised
 
@@ -357,7 +357,7 @@ called *TaxPayer* and make classes to implement it.
   - Make sure the IRS object to test has 1 SalariedEmployee,
     1 HourlyEmployee, and 1 Corporation as TaxPayer objects
 
-### Optional exercise
+### Optional exercise (do this only if have extra time)
 
 - We would like to add natural ordering to the *Employee* objects
   as following:
