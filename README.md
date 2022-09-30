@@ -36,8 +36,10 @@ along with this README.md file.
 
 ### Concepts that are exercised 
 
-- Java class and objects and OOP (slides #35-#42 of Java Part1 presentation)
-- Unit Testing (slides#180-#203 of Java Part2 presentation)
+- Object-Oriented-Programming (slides #35-#42 of Java Part1 presentation)
+- Classes, References, and Instantiation (slide #44-#48)
+- Data and Methods in a class (slide #49-#56)
+- Unit Testing (slides #180-#203 of Java Part2 presentation)
 
 ### High-level steps to take
 
@@ -126,7 +128,7 @@ public int computeNumberOfYearsWorkedSinceHired() {
 
 ### High-level steps to take
 
-- Write sub-classes of *Employee* class
+- Write sub-classes of *Employee* class: *SalariedEmployee* and *HourlyEmployee* 
 - Write *Department* class that contains an array of *Employee* objects
 
 ### Concrete steps to take
