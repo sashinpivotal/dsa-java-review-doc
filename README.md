@@ -37,8 +37,8 @@ along with this README.md file.
 ### Concepts that are exercised 
 
 - Object-Oriented-Programming (slides #35-#42 of Java Part1 presentation)
-- Classes, References, and Instantiation (slide #44-#48)
-- Data and Methods in a class (slide #49-#56)
+- Classes, References, and Instantiation (slides #44-#48 of Java Part1 presentation)
+- Data and Methods in a class (slides #49-#56 of Java Part1 presentation)
 - Unit Testing (slides #180-#203 of Java Part2 presentation)
 
 ### High-level steps to take
@@ -68,8 +68,10 @@ along with this README.md file.
 
 - Create *com.hr.personnel.client* sub-package
 - Write *HRClient* class under *com.hr.personnel.client* sub-package 
+  - Create "main(..)" method
   - Create two *com.hr.personnel.Employee** objects 
     and call *getEmployeeInfo* method of those objects
+  - For creating "LocalDate" object, you can use "LocalDate.of(YYYY, MM, DD)"
   - Display the result in the console
   
 - Add JUnit 4 dependency to the *pom.xm* as as shown below:
@@ -122,9 +124,9 @@ public int computeNumberOfYearsWorkedSinceHired() {
 
 ### Concepts that are exercised
 
-- Composition (slides #220-#228)
-- Inheritance (slides #230-#239)
-- Java array (slide #179-#186)
+- Composition (slides #220-#228 of Java Part1 presentation)
+- Inheritance (slides #230-#239 of Java Part1 presentation)
+- Java array (slides #179-#186 of Java Part1 presentation)
 
 ### High-level steps to take
 
@@ -197,7 +199,7 @@ In this step, you are going to do the following:
 
 ### Concepts that are exercised
 
-- Overriding methods and Polymorphism (slides #244-251)
+- Overriding methods and Polymorphism (slides #244-251 of Java Part1 presentation)
 
 ### Concrete steps to take
 
@@ -258,7 +260,7 @@ In this step, you are going to do the following:
 
 ### Concepts that are exercised
 
-- Abstract class (slides #253-#256)
+- Abstract class (slides #253-#256 of Java Part1 presentation)
 
 ### High-level steps to take
 
@@ -294,7 +296,7 @@ In this step, you are going to do the following:
 
 ### Concepts that are exercised
 
-- Interface Basics (slide #262-#269)
+- Interface Basics (slide #262-#269 of Java Part1 presentation)
 
 ### High-level steps to take
 
@@ -369,7 +371,7 @@ In this step, you are going to do the following:
 
 ### Concepts that are exercised
 
-- Default method in a Java interface (slides #273-#278)
+- Default method in a Java interface (slides #273-#278 of Java Part1 presentation)
 
 ### Concrete steps to take
 
@@ -426,7 +428,7 @@ default double computeStandardEmployeeMonthlyDeduction() {
 
 ### Concepts that are exercised
 
-- Exceptions (#282-#309)
+- Exceptions (#282-#309 of Java Part1 presentation)
 
 ### Concrete steps to take
   
@@ -496,7 +498,7 @@ Collection object.
 
 ### Concepts that are exercised
 
-- Collections (slides #310-#374)
+- Collections (slides #310-#374 of Java Part1 presentation)
 
 ### Concrete steps to take
 
