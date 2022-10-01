@@ -29,8 +29,7 @@ essential Java concepts and features for the DS&A students.
 
 ## Solution code
 
-The project contains the final solution code
-along with this README.md file.
+The solution code (up to lab step #9) is available from [here](https://github.com/sashinpivotal/dsa-java-review-code)
 
 ## Lab step 1 - Java class and objects and Testing (45 minutes)
 
