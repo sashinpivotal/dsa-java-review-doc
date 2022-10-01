@@ -18,15 +18,6 @@ essential Java concepts and features for the DS&A students.
 - JSON utility (Simple JSON)
 - Enum
 
-## Advanced Java concepts
-
-- Natural ordering
-- Unit testing using Mockito
-- DAO (Data Access Object) layer
-- Generics
-- TDD practices
-- Lambda, Functional Interface, and Streams
-
 ## Solution code
 
 The solution code (up to lab step #9) is available from [here](https://github.com/sashinpivotal/dsa-java-review-code)
@@ -35,7 +26,6 @@ The solution code (up to lab step #9) is available from [here](https://github.co
 
 ### Concepts that are exercised 
 
-- Object-Oriented-Programming (slides #35-#42 of Java Part1 presentation)
 - Classes, References, and Instantiation (slides #44-#48 of Java Part1 presentation)
 - Data and Methods in a class (slides #49-#56 of Java Part1 presentation)
 - Unit Testing (slides #180-#203 of Java Part2 presentation)
@@ -123,7 +113,7 @@ public int computeNumberOfYearsWorkedSinceHired() {
 
 ### Concepts that are exercised
 
-- Composition (slides #220-#228 of Java Part1 presentation)
+- Composition (slides #222-#228 of Java Part1 presentation)
 - Inheritance (slides #230-#239 of Java Part1 presentation)
 - Java array (slides #179-#186 of Java Part1 presentation)
 
