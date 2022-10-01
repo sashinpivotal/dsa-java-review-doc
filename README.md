@@ -287,14 +287,16 @@ double salary = employee.getMonthlySalary();
 
 - Convert *getEmployeeInfo()* of the *Employee* class
   into an abstract method as well
-  -  *getEmployeeInfo()* method of the *HourlyEmployee* should
+  -  *getEmployeeInfo()* method of the *HourlyEmployee* 
+     class should
      return *hoursWorkedPerMonth* and *hourlyRate* along with
      *name* and *hireDate*
-  -  *getEmployeeInfo()* method of the *Salaried* should
-     return *monthlySalary* along with
+  -  *getEmployeeInfo()* method of the *SalariedEmployee* class
+     should return *monthlySalary* along with
      *name* and *hireDate*
 
-- Write test methods of  *getEmployeeInfo()* method
+- Write test methods of *getEmployeeInfo()* method in both
+  *SalariedEmployee* and *HourlyEmployee" classes
 
 ### Quiz
 
@@ -311,18 +313,21 @@ double salary = employee.getMonthlySalary();
 ### High-level steps to take
 
 - Create a Java interface called *TaxPayer*
-- Write classes that implement *TaxPayer* interface
+- Refactor/Write implementation classes that implement *TaxPayer* interface
   
 ### Concrete steps to take
 
 - Create *gov.irs* package
 - Create *TaxPayer* interface under *gov.irs* package with 
   the following methods
-  - double computeMonthlyTaxToPay(); // returns amount of monthly tax to pay
+  - double computeMonthlyTaxToPay(); 
   
 - Add the following constants to the interface - these are tax rates
-  - public static final double HOURLY_TAX_RATE = 0.25;
-  - public static final double SALARIED_TAX_RATE = 0.30;
+
+```java
+    public static final double HOURLY_TAX_RATE = 0.25;
+    public static final double SALARIED_TAX_RATE = 0.30;
+```
 
 - Make *com.hr.personnel.Employee* abstract class to 
   implement *TaxPayer* interface
@@ -347,11 +352,19 @@ double salary = employee.getMonthlySalary();
   - private TaxPayer[] taxPayers = new TaxPayer[100];
   - private int currentIndex = 0;  // for dealing with the array
 - Add and implement the following methods to the *IRS* class
-  - void register(TaxPayer taxPayer)
-  - double computeTotalMonthlyTaxToCollect()
+
+```java
+    public void register(TaxPayer taxPayer) {
+       // add code here
+    }
+
+    public double computeTotalMonthlyTaxToCollect() {
+       // add code here
+    }
+```
   
 - Write *IRSTest* class testing *computeTotalMonthlyTaxToCollect()* method
-  - Make sure the IRS object to test has 1 SalariedEmployee,
+  - Make sure the IRS object to test has at least 1 SalariedEmployee,
     1 HourlyEmployee, and 1 Corporation as TaxPayer objects
 
 ### Optional exercise (do this only if have extra time)
@@ -431,8 +444,6 @@ default double computeStandardEmployeeMonthlyDeduction() {
   true or false?
 - You cannot override the default methods of an interface
   in the implementation classes, true or false?
-- If a class implements interface A and interface B, both
-  of which has the same default method, what will happen?
 
 ## Lab Step 7 - Exception handling (20 minutes)
 
@@ -479,21 +490,12 @@ are going to create a custom exception.
 
 ### Concrete steps to take
 
-- Create and use *IllegalHourlyWageException* class 
-  instead of *IllegalArgumentException* when *hourlyRate*
-  is set to a value that is smaller than 
-  *FEDERAL_MINIMUM_HOURLY_WAGE*
-
 - If monthly salary for *SalariedEmployee* is set with 
-  more than 1 million dollars, throw *TooMuchSalaryException*
+  more than 1 million dollars, throw *TooMuchSalaryException* with "too much salary" as an exception message
 
-- Refactor *HourlyEmployeeTest* and *SalariedEmployeeTest*
+- Refactor *SalariedEmployeeTest*
   accordingly
 
-
-### Resources
-
-- [Java Exception presentation](https://github.com/sashinpivotal/java-presentations/blob/main/javase_exceptions.pdf)
 
 ### Quizzes
 
@@ -502,9 +504,10 @@ are going to create a custom exception.
 
 ## Lab Step 9 - Collection classes (20 minutes)
 
-So far, we used an array for maintaining employee
-objects. In this step, we are going to use proper
-Collection object.
+So far, we used an array for maintaining *Employee*
+objects inside *Department* and *TaxPayer* objects inside 
+*IRS*. In this step, we are going to use proper
+Collection object instead of an array.
 
 ### Concepts that are exercised
 
@@ -521,10 +524,6 @@ Collection object.
 - Remove *currentIndex* field from the *IRS* class
 
 - Refactor any code that need to be refactored accordingly
-
-### Resources
-
-- [Java Collection presentation](https://github.com/sashinpivotal/java-presentations/blob/main/javase_collections.pdf)
 
 
 ## Lab Step 10 - Singleton (20 minutes)
@@ -717,7 +716,7 @@ In this step, you are going to add Java Enum class.
 ### Concepts that are exercised
 
 - Composition
-- Enum
+- Enum (slides #122-#129)
 
 ### Concrete steps to take
 
