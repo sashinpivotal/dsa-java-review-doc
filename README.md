@@ -13,10 +13,25 @@ essential Java concepts and features for the DS&A students.
 - **Java interfaces**
 - **Collection classes**
 - **Unit Testing**
+- **Enum**
 - Singleton
 - Constants class
 - JSON utility (Simple JSON)
-- Enum
+
+
+## Java Topics that we might not have time to cover due to time constraint (will provide resources)
+
+- Design patterns
+- SOLID principles
+- Dependency injection
+- Streams/Lambda
+
+## Topics we will cover as part of DS&A 
+
+- Recursion
+- Sorting algorithm
+- Runtime/space complexity
+
 
 ## Solution code
 
