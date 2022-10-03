@@ -21,7 +21,7 @@ essential Java concepts and features for the DS&A students.
 
 ## Java Topics that we might not have time to cover due to time constraint (will provide resources)
 
-- Design patterns
+- Design patterns (will be covered during Oct. 6th 6:30-7:00 AM PST tutorial session)
 - SOLID principles
 - Dependency injection
 - Streams/Lambda
