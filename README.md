@@ -359,8 +359,8 @@ double salary = employee.getMonthlySalary();
 - Add the following constants to the interface - these are tax rates
 
 ```java
-    public static final double HOURLY_TAX_RATE = 0.25;
-    public static final double SALARIED_TAX_RATE = 0.30;
+public static final double HOURLY_TAX_RATE = 0.25;
+public static final double SALARIED_TAX_RATE = 0.30;
 ```
 
 - Make *com.hr.personnel.Employee* abstract class to 
