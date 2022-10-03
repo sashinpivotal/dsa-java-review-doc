@@ -105,7 +105,8 @@ The solution code (up to lab step #9) is available from [here](https://github.co
   - "git commit -m "initial commit"
   - create a repo in your GitHub 
   - go to your project directory root
-  - git remote add origin \<your-github-repo\>
+  - "git remote add origin \<your-github-repo\>"
+  - "git push -u origin main"
 
 ### Optional exercise (do this only if you have extra time)
 
