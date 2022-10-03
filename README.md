@@ -87,6 +87,17 @@ The solution code (up to lab step #9) is available from [here](https://github.co
 - Write Unit testing code of *com.hr.personnel.Employee* class
   - Verify that *getEmployeeInfo* and *work* methods work as expected
 
+- AssertJ dependency
+
+```xml
+<dependency>
+    <groupId>org.assertj</groupId>
+    <artifactId>assertj-core</artifactId>
+    <version>3.23.0</version>
+    <scope>test</scope>
+</dependency>
+```
+
 - Check in your code to the Github repo
   - "git init"
   - add .gitignore to the project directory
