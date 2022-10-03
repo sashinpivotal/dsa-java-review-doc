@@ -29,6 +29,7 @@ The solution code (up to lab step #9) is available from [here](https://github.co
 - Classes, References, and Instantiation (slides #44-#48 of Java Part1 presentation)
 - Data and Methods in a class (slides #49-#56 of Java Part1 presentation)
 - Unit Testing (slides #180-#203 of Java Part2 presentation)
+- Git/GitHub
 
 ### High-level steps to take
 
@@ -36,6 +37,7 @@ The solution code (up to lab step #9) is available from [here](https://github.co
 - Create *Employee* class with some fields and methods
 - Write client code that creates and accesses objects of *Employee* class
 - Write test code testing *Employee* class
+- Check in the code to GitHub repo
 
 ### Concrete steps to take
 
@@ -84,6 +86,8 @@ The solution code (up to lab step #9) is available from [here](https://github.co
 
 - Write Unit testing code of *com.hr.personnel.Employee* class
   - Verify that *getEmployeeInfo* and *work* methods work as expected
+
+- Check in your code to the Github repo
 
 ### Optional exercise (do this only if you have extra time)
 
