@@ -30,7 +30,6 @@ essential Java concepts and features for the DS&A students.
 - Dynamic programming?
 - Sorting algorithm
 - Runtime/space complexity
-  
 - Streams/Lambda 
 - SOLID principles
 - Dependency injection
