@@ -88,6 +88,13 @@ The solution code (up to lab step #9) is available from [here](https://github.co
   - Verify that *getEmployeeInfo* and *work* methods work as expected
 
 - Check in your code to the Github repo
+  - "git init"
+  - add .gitignore to the project directory
+  - "git add ."
+  - "git commit -m "initial commit"
+  - create a repo in your GitHub 
+  - go to your project directory root
+  - git remote add origin <your-github-repo>
 
 ### Optional exercise (do this only if you have extra time)
 
