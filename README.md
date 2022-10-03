@@ -24,13 +24,14 @@ essential Java concepts and features for the DS&A students.
 - Design patterns (will be covered during Oct. 6th 6:30-7:00 AM PST tutorial session)
 - SOLID principles
 - Dependency injection
-- Streams/Lambda
 
 ## Topics we will cover as part of DS&A 
 
 - Recursion
+- Dynamic programming?
 - Sorting algorithm
 - Runtime/space complexity
+- Streams/Lambda 
 
 
 ## Solution code
