@@ -126,12 +126,16 @@ public int computeNumberOfYearsWorkedSinceHired() {
 ### Quiz
 
 - What are the differences among the following access modifiers?
-  - private
-  - default (package-private)
-  - protected
-  - public
+  - private - any member of the class can be visible only within that class
+  - default (package-private) - member of the class is visible by any other class in the same package
+  - protected - default scope + member of the class is visible by any subclass even if the subclass is in different package
+  - public - any member of the class can be visible by any other class
 - Why do you want to make your fields private?
+  - if you make your fields non-private, any other class can access and change it
+  - you lose maintainability of that code
+  - instead you should provider getter/setter methods
 - What is *@Before* annotation (in JUnit 4) for in your testing code?
+  - test arrangement logic that gets executed before any test
 
 ## Lab Step 2 - Composition and Inheritance (30 minutes)
 
