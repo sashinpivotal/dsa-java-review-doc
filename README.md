@@ -132,7 +132,7 @@ The solution code (up to lab step #9) is available from [here](https://github.co
 // If current year is 2022 and the year of hireDate is
 // 2020, it returns 2
 public int computeNumberOfYearsWorkedSinceHired() {
-    // add code here - do not use deprecated method
+    // add code here 
 }
 ```
 
