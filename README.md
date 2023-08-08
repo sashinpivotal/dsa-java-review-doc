@@ -19,10 +19,6 @@ essential Java concepts and features for the DS&A students.
 - JSON utility (Simple JSON)
 
 
-## Java Topics that we might not have time to cover due to time constraint (will provide resources)
-
-- Design patterns (will be covered during Oct. 6th 6:30-7:00 AM PST tutorial session)
-
 
 ## Topics we will cover as part of DS&A 
 
@@ -158,9 +154,9 @@ public int computeNumberOfYearsWorkedSinceHired() {
 
 ### Concepts that are exercised
 
-- Composition (slides #222-#228 of Java Part1 presentation)
-- Inheritance (slides #230-#239 of Java Part1 presentation)
-- Java array (slides #179-#186 of Java Part1 presentation)
+- Composition 
+- Inheritance
+- Java array 
 
 ### High-level steps to take
 
@@ -225,7 +221,7 @@ double salary = employee.getMonthlySalary();
 
 ### Concepts that are exercised
 
-- Overriding methods and Polymorphism (slides #244-251 of Java Part1 presentation)
+- Overriding methods and Polymorphism 
 
 ### High-level steps to take
 
@@ -304,7 +300,7 @@ double salary = employee.getMonthlySalary();
 
 ### Concepts that are exercised
 
-- Abstract class (slides #253-#256 of Java Part1 presentation)
+- Abstract class 
 
 ### High-level steps to take
 
@@ -342,7 +338,7 @@ double salary = employee.getMonthlySalary();
 
 ### Concepts that are exercised
 
-- Interface Basics (slide #262-#269 of Java Part1 presentation)
+- Interface Basics 
 
 ### High-level steps to take
 
@@ -428,7 +424,7 @@ public static final double SALARIED_TAX_RATE = 0.30;
 
 ### Concepts that are exercised
 
-- Default method in a Java interface (slides #273-#278 of Java Part1 presentation)
+- Default method in a Java interface 
 
 ### Concrete steps to take
 
@@ -483,7 +479,7 @@ default double computeStandardEmployeeMonthlyDeduction() {
 
 ### Concepts that are exercised
 
-- Exceptions (#282-#309 of Java Part1 presentation)
+- Exceptions 
 
 ### Concrete steps to take
   
@@ -545,7 +541,7 @@ Collection object instead of an array.
 
 ### Concepts that are exercised
 
-- Collections (slides #310-#374 of Java Part1 presentation)
+- Collections
 
 ### Concrete steps to take
 
@@ -750,7 +746,7 @@ In this step, you are going to add Java Enum class.
 ### Concepts that are exercised
 
 - Composition
-- Enum (slides #122-#129)
+- Enum 
 
 ### Concrete steps to take
 
