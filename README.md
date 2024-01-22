@@ -127,35 +127,38 @@ The solution code (up to lab step #9) is available from [here](https://github.co
 ```
 
 - Check in your code to the Github repo
-  - "git init"
-  - add **.gitignore** file to the project root directory with the following content
-  
-  ```
-  # IntelliJ metadata files
-  .idea/
-  *.iml
-  # Compiled class file
-  *.class
+  - Step 1: Under the local project directory
+    - "git init"
+    - create **.gitignore** file under the root project directory
+      with the following contents:
+      
+      ```
+      # Compiled class file
+      *.class
 
-  # Log file
-  *.log
+      # Log file
+      *.log
 
-  # Package Files #
-  *.jar
-  *.war
-  *.nar
-  *.ear
-  *.zip
-  *.tar.gz
-  *.rar
-  ```
-  - "git add ."
-  - "git commit -m "initial commit"
-  - create a repo in your GitHub 
-  - go to your project directory root
-  - "git remote add origin \<your-github-repo\>"
-  - "git branch -M main"
-  - "git push -u origin main"
+      # Package Files #
+      *.jar
+      *.war
+      *.nar
+      *.ear
+      *.zip
+      *.tar.gz
+      ```
+
+    - "git add ."
+    - "git commit -m "initial commit"
+  - Step 2: In your GitHub webpage
+    - create a new repository called "java-review-project" with
+      default values of all the other options
+    - Do NOT create **.gitignore** file for Java project 
+    - Copy the  \<your-github-repo\> (using HTTPS)
+  - Step 3: Under the local project directory again
+    - "git remote add origin \<your-github-repo\>"
+    - "git branch -M main" (if your main branch is not "main")
+    - "git push -u origin main"
 
 ### Optional exercise (do this only if you have extra time)
 
