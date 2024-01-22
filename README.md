@@ -133,19 +133,16 @@ The solution code (up to lab step #9) is available from [here](https://github.co
       with the following contents:
 
       ```
-      # Compiled class file
-      *.class
+      target/
 
-      # Log file
-      *.log
+      ### IntelliJ IDEA ###
+      .idea
+      *.iws
+      *.iml
+      *.ipr
 
-      # Package Files #
-      *.jar
-      *.war
-      *.nar
-      *.ear
-      *.zip
-      *.tar.gz
+      ### VS Code ###
+      .vscode/
       ```
 
     - "git add ."
@@ -165,6 +162,8 @@ The solution code (up to lab step #9) is available from [here](https://github.co
     - "git remote add origin \<your-github-repo\>"
     - "git branch -M main" (if your main branch is not "main")
     - "git push -u origin main"
+  - Step 4: In your GitHub webpage
+    - Verify your code is now in your remote GitHub project
 
 ### Optional exercise (do this only if you have extra time)
 
@@ -183,17 +182,13 @@ public int computeNumberOfYearsWorkedSinceHired() {
 ### Quiz
 
 - What are the differences among the following access modifiers?
-  - private - any member of the class can be visible only within that class
-  - default (package-private) - member of the class is visible by any other class in the same package
-  - protected - default scope + member of the class is visible by any subclass even if the subclass is in different package
-  - public - any member of the class can be visible by any other class
+  - private 
+  - default (package-private) 
+  - protected 
+  - public 
 - Why do you want to make your fields private?
-  - if you make your fields non-private, any other class can access and change it
-  - you lose maintainability of that code
-  - instead you should provider getter/setter methods
 - What is *@Before* annotation (in JUnit 4) for in your testing code?
-  - test arrangement logic that gets executed before any test
-
+  
 ## Lab Step 2 - Composition and Inheritance (30 minutes)
 
 ### Concepts that are exercised
