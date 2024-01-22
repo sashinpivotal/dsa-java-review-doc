@@ -205,6 +205,7 @@ public int computeNumberOfYearsWorkedSinceHired() {
 ### Concrete steps to take
 
 - Create *SalariedEmployee* and *HourlyEmployee* classes 
+  under *com.hr.personnel* package
   extending *com.hr.personnel.Employee* class
 
   - Add the following fields and appropriate accessor 
@@ -217,20 +218,25 @@ public int computeNumberOfYearsWorkedSinceHired() {
     - double hourlyRate;
 
 - Refactor *HRClient* class
+  - Remove code that create *Employee* objects
   - Create two *SalariedEmployee*
-    objects and one *HourlyEmployee* object replacing
-    *Employee* objects 
+    objects and one *HourlyEmployee* object 
   
 - Create *Department* class under the *com.hr.personnel*
   package with the following fields:
   - String name
   - String location
   - com.hr.personnel.Employee[] employees // array with size of 100 
-  - int currentIndex // set to 0 for now
+  - int currentIndex // - set to 0 for now - represents
+                     // - represents a number of valid Employee objects
+                     //   in the array
   
 - Add and implement the following methods to the *Department* class
   - void addEmployee(Employee employee)
   - int letEmployeesWorkAndReturnNumberOfEmployeesWhoWorked()
+    - This method should return number of Employee objects
+      in the *employees" array whose "work()" method returns "\<name\> worked"
+      response
 
 - Refactor *HRClient* class to use *Department* class
   - Add employee objects to the *Department* object
