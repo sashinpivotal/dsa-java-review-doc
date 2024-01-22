@@ -234,8 +234,8 @@ public int computeNumberOfYearsWorkedSinceHired() {
 - Add and implement the following methods to the *Department* class
   - void addEmployee(Employee employee)
   - int letEmployeesWorkAndReturnNumberOfEmployeesWhoWorked()
-    - This method should return number of Employee objects
-      in the *employees" array whose "work()" method returns "\<name\> worked"
+    - This method should return number of *Employee* objects
+      in the *employees* array whose *work()* method returns "\<name\> worked"
       response
 
 - Refactor *HRClient* class to use *Department* class
