@@ -3,6 +3,23 @@
 The goal of this 1-day lab is to review and exercise basic yet  
 essential Java concepts and features for the DS&A students. 
 
+-  [Lab step 1 - Java class and objects and Testing](#lab-step-1---java-class-and-objects-and-testing-45-minutes)
+-  [Lab Step 2 - Composition and Inheritance](#lab-step-2---composition-and-inheritance-30-minutes)
+-  [Lab Step 3 - Overloading and Polymorphism](#lab-step-3---overloading-and-polymorphism-30-minutes)
+-  [Lab Step 4 - Abstract class](#lab-step-4---abstract-class-20-minutes)
+-  [Lab Step 5 - Interface](#lab-step-5---interface-45-minutes)
+-  [Lab Step 6 - Default method](#lab-step-6---default-method-20-minutes)
+-  [Lab Step 7 - Exception handling](#lab-step-7---exception-handling-20-minutes)
+-  [Lab Step 8 - Custom exception](#lab-step-8---custom-exception-20-minutes)
+-  [Lab Step 9 - Collection classes](#lab-step-9---collection-classes-20-minutes)
+-  [Lab Step 10 - Singleton](#lab-step-10---singleton-20-minutes)
+-  [Lab Step 11 - Constant class](#lab-step-11---constant-class-20-minutes)
+-  [Lab Step 12 - Simple JSON](#lab-step-12---simple-json-30-minutes)
+-  [Lab Step 13 - Composition, Enum](#concepts-that-are-exercised-13)
+-  [Lab Step 14 (Optional) - DAO (Data Access Object) layer](#lab-step-14-optional---dao-data-access-object-layer)
+-  [Lab Step 15 (Optional) - Unit testing with Mockito](#lab-step-15-optional---unit-testing-with-mockito)
+
+
 ## Essential Java concepts covered 
 
 - **Java classes and Java objects**
@@ -17,8 +34,6 @@ essential Java concepts and features for the DS&A students.
 - Singleton
 - Constants class
 - JSON utility (Simple JSON)
-
-
 
 ## Topics we will cover as part of DS&A 
 
