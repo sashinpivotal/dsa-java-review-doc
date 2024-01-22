@@ -131,7 +131,7 @@ The solution code (up to lab step #9) is available from [here](https://github.co
     - "git init"
     - create **.gitignore** file under the root project directory
       with the following contents:
-      
+
       ```
       # Compiled class file
       *.class
@@ -151,11 +151,17 @@ The solution code (up to lab step #9) is available from [here](https://github.co
     - "git add ."
     - "git commit -m "initial commit"
   - Step 2: In your GitHub webpage
-    - create a new repository called "java-review-project" with
+    - Create a new repository called "java-review-project" with
       default values of all the other options
-    - Do NOT create **.gitignore** file for Java project 
-    - Copy the  \<your-github-repo\> (using HTTPS)
+      - DO NOT select "Add a README file"
+      - DO NOT add **.gitignore** file
+    - Once you create a repository, copy the  
+     \<your-github-repo\> (using HTTPS)
+      - It should look like something like **https://github.com/sashinpivotal/java-review-project.git**
   - Step 3: Under the local project directory again
+    (These are the same steps mentioned in the repository page under 
+    **…or push an existing repository from the command line** 
+    section)
     - "git remote add origin \<your-github-repo\>"
     - "git branch -M main" (if your main branch is not "main")
     - "git push -u origin main"
