@@ -128,7 +128,27 @@ The solution code (up to lab step #9) is available from [here](https://github.co
 
 - Check in your code to the Github repo
   - "git init"
-  - add .gitignore to the project directory
+  - add **.gitignore** file to the project root directory with the following content
+  
+  ```
+  # IntelliJ metadata files
+  .idea/
+  *.iml
+  # Compiled class file
+  *.class
+
+  # Log file
+  *.log
+
+  # Package Files #
+  *.jar
+  *.war
+  *.nar
+  *.ear
+  *.zip
+  *.tar.gz
+  *.rar
+  ```
   - "git add ."
   - "git commit -m "initial commit"
   - create a repo in your GitHub 
