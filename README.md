@@ -18,6 +18,7 @@ essential Java concepts and features for the DS&A students.
 -  [Lab Step 13 - Composition, Enum](#concepts-that-are-exercised-13)
 -  [Lab Step 14 (Optional) - DAO (Data Access Object) layer](#lab-step-14-optional---dao-data-access-object-layer)
 -  [Lab Step 15 (Optional) - Unit testing with Mockito](#lab-step-15-optional---unit-testing-with-mockito)
+-  []
 
 
 ## Essential Java concepts covered 
@@ -35,16 +36,26 @@ essential Java concepts and features for the DS&A students.
 - Constants class
 - JSON utility (Simple JSON)
 
-## Topics we will cover as part of DS&A 
+## Java Knowledge questions
 
-- Recursion
-- Dynamic programming?
-- Sorting algorithm
-- Runtime/space complexity
-- Streams/Lambda 
-- SOLID principles
-- Dependency injection
-
+- When do you want to use Java interface? 
+- What is encapsulation? What is abstraction? 
+- What is Polymorphism? What are the examples of polymorphism? 
+- What is difference between "protected" vs "package private or default" access modifier? 
+- What is "Single responsibility principle of SOLID"? Why should we use it? 
+- What is "Open for extension Closed for modification of SOLID" design principle? 
+- What is dependency injection and why it is such an important software design concept? 
+- What are the major differences between Set vs List? 
+- When is a static method? Why do you want to create a method as a static method? 
+- Is it a good idea to create a static method which maintains a state? 
+- What is a functional interface in Java? 
+- What is Lambda expression? Where do you want use it? 
+- What is Generics and why you want to use it in your code? 
+- What is the difference between Java Collection vs Java Streams? 
+  (We are NOT talking about Java I/O Stream.) 
+- What is Optional class for in Java? 
+- What is a design pattern? What is "Strategy" pattern? 
+- What is dependency management in your project? 
 
 ## Solution code
 
