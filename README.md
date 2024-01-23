@@ -309,7 +309,10 @@ double salary = employee.getMonthlySalary();
   
 - Add code in the *HRClient* class to display the result of
   calling *computeDepartmentMonthlyTotalCompensation()* method
-  - Refactor *HRClient* class to create *SalariedEmployee* and *HourlyEmployee* objects with *monthlySalary* and *hourlyRate*/*hoursWorkedPerMonth* as constructor arguments respectively
+  - Refactor *HRClient* class to create *SalariedEmployee* 
+    and *HourlyEmployee* objects with *monthlySalary* 
+    and *hourlyRate*/*hoursWorkedPerMonth* as constructor 
+    arguments respectively (if it is not done already)
   - Or you can use setter methods to set the values of these fields
 
 - Write testing code testing
@@ -317,7 +320,8 @@ double salary = employee.getMonthlySalary();
   and *HourlyEmployee* classes 
 
 - Write testing code testing
-  *computeDepartmentMonthlyTotalCompensation()* method
+  *computeDepartmentMonthlyTotalCompensation()* method of
+  the *Department* class
 
 ### Optional exercise (do this only if you have extra time)
 
