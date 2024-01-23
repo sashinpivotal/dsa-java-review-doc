@@ -15,7 +15,7 @@ essential Java concepts and features for the DS&A students.
 -  [Lab Step 10 - Singleton](#lab-step-10---singleton-20-minutes)
 -  [Lab Step 11 - Constant class](#lab-step-11---constant-class-20-minutes)
 -  [Lab Step 12 - Simple JSON](#lab-step-12---simple-json-30-minutes)
--  [Lab Step 13 - Composition, Enum](#concepts-that-are-exercised-13)
+-  [Lab Step 13 - Composition, Enum](#lab-step-13---composition-enum-30-minutes)
 -  [Lab Step 14 (Optional) - DAO (Data Access Object) layer](#lab-step-14-optional---dao-data-access-object-layer)
 -  [Lab Step 15 (Optional) - Unit testing with Mockito](#lab-step-15-optional---unit-testing-with-mockito)
 
