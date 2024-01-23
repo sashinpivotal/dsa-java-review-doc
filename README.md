@@ -47,8 +47,8 @@ essential Java concepts and features for the DS&A students.
 - What are the major differences between Set vs List? 
 - When is a static method? Why do you want to create a method as a static method? 
 - Is it a good idea to create a static method which maintains a state? 
-- What is a functional interface in Java? 
-- What is Lambda expression? Where do you want use it? 
+- What is Lambda expression (or Lambda in short)? Where do you want use it? 
+- What is a functional interface in Java (in the context of Lambda)? 
 - What is Generics and why you want to use it in your code? 
 - What is the difference between Java Collection vs Java Streams? 
   (We are NOT talking about Java I/O Stream.) 
