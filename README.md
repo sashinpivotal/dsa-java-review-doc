@@ -18,7 +18,6 @@ essential Java concepts and features for the DS&A students.
 -  [Lab Step 13 - Composition, Enum](#concepts-that-are-exercised-13)
 -  [Lab Step 14 (Optional) - DAO (Data Access Object) layer](#lab-step-14-optional---dao-data-access-object-layer)
 -  [Lab Step 15 (Optional) - Unit testing with Mockito](#lab-step-15-optional---unit-testing-with-mockito)
--  []
 
 
 ## Essential Java concepts covered 
@@ -123,10 +122,27 @@ The solution code (up to lab step #9) is available from [here](https://github.co
 </project>
 ```
 
+- If you want to use JUnit 5 (instead of JUnit 4), add the following
+  dependency
+
+```xml
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.9.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
+```  
+
 - Write Unit testing code of *com.hr.personnel.Employee* class
   - Verify that *getEmployeeInfo* and *work* methods work as expected
 
-- AssertJ dependency
+- If you want use AssertJ assertions (instead of JUnit assertions),
+  add the following dependency
 
 ```xml
 <dependency>
