@@ -1,7 +1,7 @@
-# dsa-java-review
+# java-review
 
-The goal of this 1-day lab is to review and exercise basic yet  
-essential Java concepts and features for the DS&A students. 
+The goal of this lab is to review and exercise basic yet  
+essential Java concepts and features. 
 
 -  [Lab step 1 - Java class and objects and Testing](#lab-step-1---java-class-and-objects-and-testing-45-minutes)
 -  [Lab Step 2 - Composition and Inheritance](#lab-step-2---composition-and-inheritance-30-minutes)
